@@ -1,0 +1,1 @@
+<p>ElmiNote logo</p>
