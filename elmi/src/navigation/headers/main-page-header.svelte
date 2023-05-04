@@ -1,8 +1,3 @@
-<script>
-	import Logo from '../../core/components/logo.svelte';
-	import ButtonsGroup from '../../core/buttons/buttons-group.svelte';
-</script>
-
 <p class="header">
 	<Logo />
 
@@ -16,6 +11,11 @@
 <div class="phones-image">
 	<img src="../phones.png" alt="phones" />
 </div>
+
+<script>
+	import Logo from '../../core/components/logo.svelte';
+	import ButtonsGroup from '../../core/buttons/buttons-group.svelte';
+</script>
 
 <style lang="scss">
 	.header {
