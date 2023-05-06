@@ -1,0 +1,27 @@
+<script>
+	import { _ } from '../../../services/i18n';
+</script>
+
+<div class="container">
+	<div class="image-container"><img src="google-play-64.png" alt="google play link" /></div>
+
+	<div class="text-container">
+		<p class="subtitle">{$_('market-buttons.google.subtitle')}</p>
+		<p class="title">{$_('market-buttons.google.title')}</p>
+	</div>
+</div>
+
+<style lang="scss">
+	@import './market-button.scss';
+
+	.subtitle {
+		font-size: 12px;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	.title {
+		font-size: 22px;
+		margin: 0;
+	}
+</style>

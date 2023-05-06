@@ -1,0 +1,29 @@
+.container {
+	width: 160px;
+	height: 45px;
+	padding: 8px 15px;
+	display: grid;
+	grid-template-columns: 40px 1fr;
+
+	color: white;
+
+	background-color: grey;
+	border: 1px solid white;
+	border-radius: 4px;
+}
+
+.image-container {
+	height: 100%;
+	max-width: 35px;
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	place-content: center;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.text-container {
+	margin-left: 10px;
+}
