@@ -3,7 +3,7 @@
 </script>
 
 <div class="container">
-	<div class="image-container"><img src="google-play-64.png" alt="google play link" /></div>
+	<div class="image-container"><img src="landing/google-play-64.png" alt="google play link" /></div>
 
 	<div class="text-container">
 		<p class="subtitle">{$_('market-buttons.google.subtitle')}</p>

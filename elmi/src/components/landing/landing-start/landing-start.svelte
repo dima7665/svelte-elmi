@@ -6,7 +6,7 @@
 
 <div class="body">
 	<div class="text-container">
-		<p class="title">{$_('landing-start.title')}</p>
+		<h3 class="title">{$_('landing-start.title')} <span class="role">{$_('landing-start.role.developer')}</span></h3>
 		<p class="description">{$_('landing-start.description')}</p>
 		<div class="app-buttons">
 			<GooglePlayButton />
@@ -15,7 +15,7 @@
 	</div>
 	<div class="image-container">
 		<div class="phones-image">
-			<img src="../phones.png" alt="phones" />
+			<img src="landing/phones.png" alt="phones" />
 		</div>
 	</div>
 </div>
@@ -35,7 +35,10 @@
 			margin: 0;
 			font-size: 80px;
 			line-height: 96px;
-            color: $color-primary;
+
+			.role {
+				color: $color-primary;
+			}
 		}
 
 		.description {

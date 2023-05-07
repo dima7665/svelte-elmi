@@ -1,6 +1,7 @@
 <script>
 	import MainPageHeader from '../components/landing/headers/main-page-header.svelte';
 	import LandingStart from '../components/landing/landing-start/landing-start.svelte';
+	import LandingFeatures from '../components/landing/landing-features/landing-features.svelte';
 	import { setupI18n, waitLocale } from '../services/i18n';
 
     setupI18n({ withLocale: 'en' });
@@ -9,7 +10,16 @@
 {#await waitLocale() then}
 	<MainPageHeader />
 
-	<div>
+	<div class="body">
 		<LandingStart />
+		<LandingFeatures />
 	</div>
 {/await}
+
+<style lang="scss">
+	.body {
+		padding-left: 150px;
+
+		font-family: sans-serif;
+	}
+</style>

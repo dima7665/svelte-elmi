@@ -1,6 +1,9 @@
 {
 	"landing-start": {
-		"title": "Unique Quick Notes mobile application for Developers|",
+		"title": "Unique Quick Notes mobile application for",
+		"role": {
+			"developer": "Developers"
+		},
 		"description": "ElmiNote app is a powerful and versatile tool for organizing your thoughts and ideas on-the-go. With a clean and intuitive interface, creating, editing, and managing your notes has never been easier. Whether you're taking notes during a meeting, jotting down a to-do list, or brainstorming for your next project, the Notes app provides a seamless and efficient experience.",
 		"image-alt": "app screenshot"
 	},
@@ -8,5 +11,47 @@
 	"market-buttons": {
 		"google": { "subtitle": "Get it on", "title": "Google Play" },
 		"apple": { "subtitle": "Download on the", "title": "App Store" }
+	},
+
+	"key-features": {
+		"title": "Priority Key Features",
+		"more": "...and more addition options",
+
+		"create": {
+			"title": "Create and edit notes",
+			"description": "The app allows you to create and edit notes with ease. You can format text, add images, and attach files to your notes, making it easy to capture and organize your ideas in a structured way..."
+		},
+
+		"organize": {
+			"title": "Organize notes",
+			"description": "The app provides various options to organize your notes, including folders, tags, and search. You can create custom folders to group related notes, add tags to categorize your notes, and..."
+		},
+
+		"sync": {
+			"title": "Sync across devices",
+			"description": "The app automatically syncs your notes across devices, so you can access your notes from your phone, tablet, or computer. This ensures that your notes are always up-to-date and easily..."
+		}
+	},
+
+	"more-features": {
+		"editor": {
+			"description": "Advanced text editor, add style, highlight text or add code blocks. 20+ styles and presets ready to use",
+			"alt": "editor"
+		},
+
+		"properties": {
+			"description": "View document details, add tag and easy discover note anatomy",
+			"alt": "properties"
+		},
+
+		"categories": {
+			"description": "Eye catchy categories with a lot of illustrations, easy group and divide your materials",
+			"alt": "categories"
+		},
+
+		"tags": {
+			"description": "Create custom tags and use grate search system for easy content locate",
+			"alt": "tags"
+		}
 	}
 }

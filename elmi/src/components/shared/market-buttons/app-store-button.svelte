@@ -3,7 +3,7 @@
 </script>
 
 <div class="container">
-	<div class="image-container"><img src="app-store-64.png" alt="app store link" /></div>
+	<div class="image-container"><img src="landing/app-store-64.png" alt="app store link" /></div>
 
 	<div class="text-container">
 		<p class="subtitle">{$_('market-buttons.apple.subtitle')}</p>
@@ -20,7 +20,7 @@
 	}
 
 	.title {
-		font-size: 26px;
+		font-size: 24px;
 		margin: 0;
 	}
 </style>

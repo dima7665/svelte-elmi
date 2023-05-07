@@ -1,7 +1,7 @@
 .container {
-	width: 160px;
+	width: 170px;
 	height: 45px;
-	padding: 8px 15px;
+	padding: 8px 12px;
 	display: grid;
 	grid-template-columns: 40px 1fr;
 
@@ -26,4 +26,5 @@
 
 .text-container {
 	margin-left: 10px;
+	font-family: sans-serif;
 }
