@@ -1,12 +1,18 @@
 <script>
-	import { _ } from '../../../services/i18n';
+	import { _, locale } from '../../../services/i18n';
 	import GooglePlayButton from '../../shared/market-buttons/google-play-button.svelte';
 	import AppStoreButton from '../../shared/market-buttons/app-store-button.svelte';
+	import { getRoleI18n } from './landing-start.i18n';
+
+	const loc = $locale || 'en';
+	const role = getRoleI18n(loc).developer;
 </script>
 
 <div class="body">
 	<div class="text-container">
-		<h3 class="title">{$_('landing-start.title')} <span class="role">{$_('landing-start.role.developer')}</span></h3>
+		<h3 class="title">
+			{$_('landing-start.title')} <span class="role">{role}</span>
+		</h3>
 		<p class="description">{$_('landing-start.description')}</p>
 		<div class="app-buttons">
 			<GooglePlayButton />

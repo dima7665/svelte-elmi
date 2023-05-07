@@ -1,4 +1,4 @@
-import { locale, _, register, init, getLocaleFromNavigator, waitLocale } from 'svelte-i18n';
+import { locale, dictionary, _, register, init, getLocaleFromNavigator, waitLocale } from 'svelte-i18n';
 
 function setupI18n({ withLocale: _locale } = { withLocale: getLocaleFromNavigator() }) {
 	register('en', () => import('../lang/en.json'));
@@ -6,4 +6,4 @@ function setupI18n({ withLocale: _locale } = { withLocale: getLocaleFromNavigato
 	init({ initialLocale: _locale, fallbackLocale: 'en' });
 }
 
-export { _, waitLocale, locale, setupI18n };
+export { _, waitLocale, locale, setupI18n, dictionary };
