@@ -53,5 +53,21 @@
 			"description": "Create custom tags and use grate search system for easy content locate",
 			"alt": "tags"
 		}
+	},
+
+	"landing-theme": {
+		"title": "Eyes saved colors and contrast",
+		"title-tooltip": "User accessibility test ready AA + AAA",
+		"description": {
+			"1": "One of the main benefits of dark mode is that it reduces eye strain and fatigue, especially in low light conditions. Dark mode also reduces the amount of blue light emitted by screens, which can interfere with sleep patterns and cause eye strain over time. For users who spend a lot of time staring at screens, such as those who work in front of computers, dark mode can be a great option for reducing eye strain and fatigue.",
+			"2": "On the other hand, light mode is still the default choice for many applications and websites, and for good reason. Light mode is generally more legible in bright light conditions, such as outdoor environments, and can be easier to read for users with certain visual impairments. Additionally, some users simply prefer the aesthetics of light mode, which can appear cleaner and more elegant than dark mode.",
+			"3": "Ultimately, the choice between light mode and dark mode comes down to personal preference and the specific use case. Some applications and websites may work better with one or the other, depending on the intended audience and the context in which they will be used. As more and more devices and applications offer both light and dark modes, users have greater flexibility to choose the option that best suits their needs."
+		},
+		"themes": {
+			"light": "Default theme",
+			"dark": "Dark theme",
+			"mono": "Mono theme"
+		},
+		"coming": "... Coming soon"
 	}
 }

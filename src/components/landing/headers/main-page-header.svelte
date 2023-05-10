@@ -9,8 +9,8 @@
 </p>
 
 <script>
-	import Logo from '../../core/components/logo.svelte';
-	import ButtonsGroup from '../../core/buttons/buttons-group.svelte';
+	import Logo from '../../shared/components/logo.svelte';
+	import ButtonsGroup from '../../shared/buttons/buttons-group.svelte';
 </script>
 
 <style lang="scss">

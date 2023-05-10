@@ -1,7 +1,7 @@
 <script>
 	import { _, locale } from '../../../services/i18n';
-	import GooglePlayButton from '../../shared/market-buttons/google-play-button.svelte';
-	import AppStoreButton from '../../shared/market-buttons/app-store-button.svelte';
+	import GooglePlayButton from '../../shared/buttons/market-buttons/google-play-button.svelte';
+	import AppStoreButton from '../../shared/buttons/market-buttons/app-store-button.svelte';
 	import { getRoleI18n } from './landing-start.i18n';
 
 	const loc = $locale || 'en';

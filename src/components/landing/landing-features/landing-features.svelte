@@ -1,6 +1,6 @@
 <script>
 	import { _ } from '../../../services/i18n';
-	import FeatureCard from '../../core/cards/feature-card.svelte';
+	import FeatureCard from '../../shared/cards/feature-card.svelte';
 	import LandingStart from '../landing-start/landing-start.svelte';
 	import LandingFeaturesMore from './landing-features-more.svelte';
 

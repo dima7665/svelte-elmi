@@ -1,5 +1,5 @@
 <script>
-	import { _ } from '../../../services/i18n';
+	import { _ } from '../../../../services/i18n';
 </script>
 
 <div class="container">
