@@ -69,5 +69,26 @@
 			"mono": "Mono theme"
 		},
 		"coming": "... Coming soon"
+	},
+
+	"landing-feedback": {
+		"title": "Have an idea or ready to feedback?",
+		"subtitle": "Use this quick form to send your message, also you can get special updates! No spam, ever.",
+		"subscribe": "Subscribe me. Your address will only be used for news about Elminote. You can easily unsubscribe any time.",
+		"email": "Your email",
+		"message": "Message",
+		"send": "Send"
+	},
+
+	"landing-header": {
+		"overview": "Overview",
+		"download": "Download APP",
+		"feedback": "Feedback"
+	},
+
+	"landing-footer": {
+		"news": "News and updates",
+		"terms": "Terms of Conditions",
+		"contact": "Contact Us"
 	}
 }

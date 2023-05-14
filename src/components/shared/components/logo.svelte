@@ -1,1 +1,1 @@
-<p>ElmiNote logo</p>
+<img src="logo.png" alt="logo">

@@ -82,18 +82,4 @@
 		align-content: baseline;
 		z-index: 10;
 	}
-
-	.tooltip {
-		position: absolute;
-		max-width: 225px;
-		min-width: 225px;
-		padding: 4px 8px;
-		font-size: 14px;
-		line-height: 20px;
-		overflow: visible;
-
-		color: white;
-		background-color: $color-primary;
-		border-radius: 4px;
-	}
 </style>
