@@ -1,5 +1,6 @@
 <script>
 	import { _ } from '../../../services/i18n';
+	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
 </script>
 
 <h3 class="section-title">{$_('key-features.more')}</h3>
@@ -12,7 +13,11 @@
 			loading="lazy"
 		/>
 
-		<div style:top="300px" style:left="30px" class="tooltip">{$_('more-features.editor.description')}</div>
+		<TooltipStatic
+			tooltipContent={$_('more-features.editor.description')}
+			tooltipTop={300}
+			tooltipLeft={30}
+		/>
 	</div>
 
 	<div class="container">
@@ -22,7 +27,12 @@
 			loading="lazy"
 		/>
 
-        <div style:top="410px" style:left="10px" class="tooltip">{$_('more-features.editor.description')}</div>
+		<TooltipStatic
+			tooltipContent={$_('more-features.properties.description')}
+			tooltipTop={420}
+			tooltipLeft={0}
+			direction="top"
+		/>
 	</div>
 
 	<div style:z-index="101" class="container">
@@ -32,7 +42,11 @@
 			loading="lazy"
 		/>
 
-        <div style:top="200px" style:left="100px" class="tooltip">{$_('more-features.editor.description')}</div>
+		<TooltipStatic
+			tooltipContent={$_('more-features.categories.description')}
+			tooltipTop={180}
+			tooltipLeft={90}
+		/>
 	</div>
 
 	<div class="container">
@@ -42,7 +56,11 @@
 			loading="lazy"
 		/>
 
-        <div style:top="330px" style:left="70px" class="tooltip">{$_('more-features.editor.description')}</div>
+		<TooltipStatic
+			tooltipContent={$_('more-features.tags.description')}
+			tooltipTop={330}
+			tooltipLeft={70}
+		/>
 	</div>
 </div>
 
@@ -62,20 +80,20 @@
 		display: block;
 		position: relative;
 		align-content: baseline;
-        z-index: 10;
+		z-index: 10;
 	}
 
 	.tooltip {
 		position: absolute;
 		max-width: 225px;
 		min-width: 225px;
-        padding: 4px 8px;
-        font-size: 14px;
-        line-height: 20px;
-        overflow: visible;
+		padding: 4px 8px;
+		font-size: 14px;
+		line-height: 20px;
+		overflow: visible;
 
-        color: white;
+		color: white;
 		background-color: $color-primary;
-        border-radius: 4px;
+		border-radius: 4px;
 	}
 </style>
