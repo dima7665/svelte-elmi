@@ -2,36 +2,44 @@
 	import { _ } from '../../../services/i18n';
 </script>
 
-<h1 class="title">{$_('landing-feedback.title')}</h1>
+<div class="component">
+	<h1 class="title">{$_('landing-feedback.title')}</h1>
 
-<div class="body">
-	<h3 class="subtitle">{$_('landing-feedback.subtitle')}</h3>
+	<div class="body">
+		<h3 class="subtitle">{$_('landing-feedback.subtitle')}</h3>
 
-	<div class="form">
-		<input
-			type="email"
-			class="input email"
-			maxlength="80"
-			placeholder={$_('landing-feedback.email')}
-		/>
-		<input
-			type="text"
-			class="input message"
-			maxlength="200"
-			placeholder={$_('landing-feedback.message')}
-		/>
+		<div class="form">
+			<input
+				type="email"
+				class="input email"
+				maxlength="80"
+				placeholder={$_('landing-feedback.email')}
+			/>
+			<input
+				type="text"
+				class="input message"
+				maxlength="200"
+				placeholder={$_('landing-feedback.message')}
+			/>
 
-		<button class="submit-button">Send</button>
-	</div>
+			<button class="submit-button">Send</button>
+		</div>
 
-	<div class="checkbox">
-		<input type="checkbox" id="subscribe" />
-		<label for="subscribe">{$_('landing-feedback.subscribe')}</label>
+		<div class="checkbox">
+			<input type="checkbox" id="subscribe" />
+			<label for="subscribe">{$_('landing-feedback.subscribe')}</label>
+		</div>
 	</div>
 </div>
 
 <style lang="scss">
 	@import '../../../styles/colors.scss';
+
+	.component {
+		padding: 0 100px;
+
+		color: white;
+	}
 
 	.title {
 		font-size: 50px;
@@ -39,7 +47,7 @@
 
 	.subtitle {
 		font-size: 32px;
-        margin: 0;
+		margin: 0;
 	}
 
 	.body {
@@ -48,8 +56,7 @@
 		padding: 20px 30px 30px;
 		gap: 20px;
 
-		// border: 1px dashed $color-sky-lightest;
-		border: 1px dashed green;
+		border: 1px dashed $color-sky-lightest;
 		border-radius: 10px;
 	}
 

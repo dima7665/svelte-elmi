@@ -12,9 +12,20 @@
 
 	<div class="body-right">
 		<div class="links">
-			<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
-			<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
-			<a href="www.google.com" class="link">{$_('landing-footer.contact')}</a>
+			<span class="link-icon"
+				><i class="icon twitter-icon" />
+				<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
+			</span>
+
+			<span class="link-icon"
+				><i class="icon terms-icon" />
+				<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
+			</span>
+
+			<span class="link-icon"
+				><i class="icon contact-icon" />
+				<a href="www.google.com" class="link">{$_('landing-footer.contact')}</a>
+			</span>
 		</div>
 	</div>
 </div>
@@ -27,7 +38,9 @@
 		grid-template-columns: auto auto;
 		justify-content: space-between;
 
-        margin-top: 78px;
+		padding: 70px 100px;
+
+		color: white;
 	}
 
 	.link {
@@ -40,11 +53,35 @@
 		width: 400px;
 		display: grid;
 		grid-auto-flow: column;
+		gap: 20px;
 		justify-content: space-between;
 	}
 
-    .links {
-        display: flex;
-        gap: 15px;
-    }
+	.links {
+		display: flex;
+		gap: 30px;
+	}
+
+	.icon {
+		width: 15px;
+		height: 16px;
+		margin: 3px 3px 0 0;
+		background-size: 15px 16px;
+	}
+
+	.twitter-icon {
+		background-image: url('icons/twitter.png');
+	}
+
+	.terms-icon {
+		background-image: url('icons/terms.png');
+	}
+
+	.contact-icon {
+		background-image: url('icons/contact.png');
+	}
+
+	.link-icon {
+		display: flex;
+	}
 </style>

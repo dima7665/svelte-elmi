@@ -24,7 +24,7 @@
 
 		padding: 20px 25px;
 
-		background-color: $color-gray;
+		background-color: rgba(32, 35, 37, 0.9);
 		border-radius: 25px;
 	}
 </style>

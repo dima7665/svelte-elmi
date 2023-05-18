@@ -32,6 +32,12 @@
 	.body {
 		width: 100%;
 		display: flex;
+
+		padding: 0 100px;
+		color: white;
+
+		background-image: url('landing/background/bg1.png');
+		background-size: cover;
 	}
 
 	.text-container {
@@ -48,8 +54,10 @@
 		}
 
 		.description {
-			width: 662px;
-			padding-right: 75px;
+			width: 720px;
+			// padding-right: 75px;
+			padding-top: 40px;
+			padding-bottom: 40px;
 
 			line-height: 24px;
 			font-size: 18px;
@@ -60,6 +68,7 @@
 		width: 400px;
 		display: grid;
 		grid-auto-flow: column;
+		gap: 20px;
 		justify-content: space-between;
 	}
 

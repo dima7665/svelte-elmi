@@ -11,11 +11,13 @@
 </script>
 
 {#await waitLocale() then}
-	<MainPageHeader />
+	<div class="header"><MainPageHeader /></div>
 
 	<div class="body">
 		<LandingStart />
-		<LandingFeatures />
+
+		<div class="white-bg"><LandingFeatures /></div>
+
 		<LandingTheme />
 		<LandingFeedback />
 		<LandingFooter />
@@ -25,10 +27,29 @@
 <style lang="scss">
 	@import '../styles/fonts.scss';
 
+	:global(body) {
+		margin: 0;
+
+		background-image: url('landing/background/bg-black.png');
+		background-size: cover;
+	}
+
+	.header {
+		position: fixed;
+		left: 100px;
+		right: 100px;
+		z-index: 1000;
+	}
+
+	.white-bg {
+		padding: 0 100px;
+		background-color: white;
+	}
+
 	.body {
-		padding-right: 100px;
-		padding-left: 100px;
+		padding-top: 160px;
 
 		font-family: 'Inter';
+		// mix-blend-mode: difference;
 	}
 </style>

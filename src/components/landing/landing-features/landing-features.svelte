@@ -50,6 +50,9 @@
 
 <style lang="scss">
 	.section-title {
+		margin-top: 0;
+		padding-top: 50px;
+
 		font-size: 50px;
 	}
 
