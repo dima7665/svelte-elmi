@@ -13,11 +13,9 @@
 			loading="lazy"
 		/>
 
-		<TooltipStatic
-			tooltipContent={$_('more-features.editor.description')}
-			tooltipTop={300}
-			tooltipLeft={30}
-		/>
+		<TooltipStatic tooltipTop={300} tooltipLeft={30}
+			>{$_('more-features.editor.description')}</TooltipStatic
+		>
 	</div>
 
 	<div class="container">
@@ -27,12 +25,9 @@
 			loading="lazy"
 		/>
 
-		<TooltipStatic
-			tooltipContent={$_('more-features.properties.description')}
-			tooltipTop={420}
-			tooltipLeft={0}
-			direction="top"
-		/>
+		<TooltipStatic tooltipTop={420} tooltipLeft={0} direction="top"
+			>{$_('more-features.properties.description')}</TooltipStatic
+		>
 	</div>
 
 	<div style:z-index="101" class="container">
@@ -42,11 +37,9 @@
 			loading="lazy"
 		/>
 
-		<TooltipStatic
-			tooltipContent={$_('more-features.categories.description')}
-			tooltipTop={180}
-			tooltipLeft={90}
-		/>
+		<TooltipStatic tooltipTop={180} tooltipLeft={90}
+			>{$_('more-features.categories.description')}</TooltipStatic
+		>
 	</div>
 
 	<div class="container">
@@ -56,11 +49,9 @@
 			loading="lazy"
 		/>
 
-		<TooltipStatic
-			tooltipContent={$_('more-features.tags.description')}
-			tooltipTop={330}
-			tooltipLeft={70}
-		/>
+		<TooltipStatic tooltipTop={330} tooltipLeft={70}
+			>{$_('more-features.tags.description')}</TooltipStatic
+		>
 	</div>
 </div>
 

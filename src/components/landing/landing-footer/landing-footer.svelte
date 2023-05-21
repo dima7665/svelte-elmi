@@ -32,6 +32,7 @@
 
 <style lang="scss">
 	@import '../../../styles/colors.scss';
+	@import '../../../styles/icons.scss';
 
 	.body {
 		display: grid;
@@ -60,25 +61,6 @@
 	.links {
 		display: flex;
 		gap: 30px;
-	}
-
-	.icon {
-		width: 15px;
-		height: 16px;
-		margin: 3px 3px 0 0;
-		background-size: 15px 16px;
-	}
-
-	.twitter-icon {
-		background-image: url('icons/twitter.png');
-	}
-
-	.terms-icon {
-		background-image: url('icons/terms.png');
-	}
-
-	.contact-icon {
-		background-image: url('icons/contact.png');
 	}
 
 	.link-icon {

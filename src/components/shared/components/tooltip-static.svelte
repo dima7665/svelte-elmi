@@ -1,12 +1,11 @@
 <script lang="ts">
-	export let tooltipContent: string;
 	export let tooltipTop = 0;
 	export let tooltipLeft = 0;
 	export let direction: 'top' | 'bottom' = 'bottom';
 </script>
 
 <div style:top="{tooltipTop}px" style:left="{tooltipLeft}px" class="tooltip {direction}">
-	{tooltipContent}
+	<slot />
 </div>
 
 <style lang="scss">

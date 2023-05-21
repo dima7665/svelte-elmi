@@ -5,5 +5,6 @@
 <style>
     .buttons-row {
         display: flex;
+        gap: 20px;
     }
 </style>
