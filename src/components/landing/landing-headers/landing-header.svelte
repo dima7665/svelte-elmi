@@ -11,31 +11,37 @@
 <div class="body">
 	<Logo />
 
-	<div class='button-group'>
+	<div class="button-group">
 		<button class="link-btn" on:click={linkClick}>
-			<i class="icon heart-icon" />{$_('landing-header.overview')}
+			<img height="20px" width="20px" src="icons/heart.png" alt="" />{$_('landing-header.overview')}
 		</button>
 		<Dropdown>
-			<button slot='trigger' class="dropdown-btn">
-				<i class="icon download-icon" />{$_('landing-header.download')}
+			<button slot="trigger" class="dropdown-btn">
+				<img height="20px" width="20px" src="icons/download.png" alt="" />
+				{$_('landing-header.download')}
 			</button>
 
-			<div slot='menu'>
-				<p>123</p>
-				<p>qwe</p>
+			<div class="drop-menu" slot="menu">
+				<div class="menu-item">
+					<span class="color-primary">AppStore</span>
+					<img height="31px" width="31px" src="icons/apple-drop.png" alt="" />
+				</div>
+				<div class="menu-item">
+					<span>GooglePlay</span>
+					<img height="31px" width="31px" src="icons/google-drop.png" alt="" />
+				</div>
 			</div>
 		</Dropdown>
-		
+
 		<!-- TODO: fix contact icon -->
 		<button class="link-btn" on:click={linkClick}>
-			<i class="icon contact2-icon" />{$_('landing-header.feedback')}
+			<img height="20px" width="20px" src="icons/mail.svg" alt="" />{$_('landing-header.feedback')}
 		</button>
 	</div>
 </div>
 
 <style lang="scss">
 	@import '../../../styles/colors.scss';
-	@import '../../../styles/icons.scss';
 
 	.body {
 		display: grid;
@@ -79,5 +85,24 @@
 		grid-template-columns: repeat(3, auto);
 		gap: 48px;
 		align-content: center;
+	}
+
+	.drop-menu {
+		display: grid;
+	}
+
+	.menu-item {
+		display: flex;
+		padding: 10px;
+		height: 40px;
+		justify-content: space-between;
+		align-items: center;
+
+		font-family: 'Inter';
+		cursor: context-menu;
+	}
+
+	.color-primary {
+		color: $color-primary;
 	}
 </style>

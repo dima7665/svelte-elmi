@@ -10,7 +10,7 @@
 		<AppStoreButton />
 	</div>
 
-	<div class="body-right">
+	<div style:margin-left='20px'>
 		<div class="links">
 			<span class="link-icon"
 				><i class="icon twitter-icon" />
