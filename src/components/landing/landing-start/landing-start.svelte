@@ -54,8 +54,8 @@
 		}
 
 		.description {
-			width: 720px;
-			// padding-right: 75px;
+			// width: 720px;
+			min-width: 600px;
 			padding-top: 40px;
 			padding-bottom: 40px;
 
@@ -74,7 +74,7 @@
 
 	.image-container {
 		max-width: 600px;
-		min-width: 600px;
+		min-width: 400px;
 
 		img {
 			transform: rotate(-9.22deg);

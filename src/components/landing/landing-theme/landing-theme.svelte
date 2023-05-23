@@ -44,6 +44,7 @@
 
 	.main-title {
 		font-size: 50px;
+		min-width: 765px;
 	}
 
 	.description {

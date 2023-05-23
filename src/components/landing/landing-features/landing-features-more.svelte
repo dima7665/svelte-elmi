@@ -60,6 +60,7 @@
 
 	.section-title {
 		font-size: 50px;
+		min-width: 750px;
 	}
 
 	.body {

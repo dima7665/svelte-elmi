@@ -52,6 +52,7 @@
 	.section-title {
 		margin-top: 0;
 		padding-top: 50px;
+		min-width: 600px;
 
 		font-size: 50px;
 	}

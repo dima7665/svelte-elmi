@@ -48,6 +48,7 @@
 		grid-template-columns: auto auto;
 		justify-content: space-between;
 
+		min-width: 700px;
 		padding: 20px 25px;
 
 		background-color: rgba(32, 35, 37, 0.9);

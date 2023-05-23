@@ -25,10 +25,10 @@
 			<button class="submit-button">Send</button>
 		</div>
 
-		<div class="checkbox">
+		<!-- <div class="checkbox">
 			<input type="checkbox" id="subscribe" />
 			<label for="subscribe">{$_('landing-feedback.subscribe')}</label>
-		</div>
+		</div> -->
 	</div>
 </div>
 
@@ -43,6 +43,7 @@
 
 	.title {
 		font-size: 50px;
+		min-width: 860px;
 	}
 
 	.subtitle {
@@ -55,6 +56,7 @@
 		flex-direction: column;
 		padding: 20px 30px 30px;
 		gap: 20px;
+		min-width: 850px;
 
 		border: 1px dashed $color-sky-lightest;
 		border-radius: 10px;
