@@ -79,6 +79,14 @@
 		gap: 70px;
 
 		padding: 0 50px;
+
+		@media (min-width: 765px) and (max-width: 1000px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: 765px) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.feature-card {

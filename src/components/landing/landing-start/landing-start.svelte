@@ -19,6 +19,7 @@
 			<AppStoreButton />
 		</div>
 	</div>
+
 	<div class="image-container">
 		<div class="phones-image">
 			<img src="landing/phones.png" alt="phones" />
@@ -38,15 +39,30 @@
 
 		background-image: url('landing/background/bg1.png');
 		background-size: cover;
+
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			gap: 30px;
+			padding: 0 15px;
+		}
 	}
 
 	.text-container {
 		width: 800px;
 
+		@media (max-width: 800px) {
+			width: 100%;
+		}
+
 		.title {
 			margin: 0;
 			font-size: 80px;
 			line-height: 96px;
+
+			@media (max-width: 800px) {
+				font-size: 40px;
+				line-height: 48px;
+			}
 
 			.role {
 				color: $color-primary;
@@ -54,13 +70,16 @@
 		}
 
 		.description {
-			// width: 720px;
 			min-width: 600px;
 			padding-top: 40px;
 			padding-bottom: 40px;
 
 			line-height: 24px;
 			font-size: 18px;
+
+			@media (max-width: 765px) {
+				min-width: 300px;
+			}
 		}
 	}
 
@@ -76,13 +95,14 @@
 		max-width: 600px;
 		min-width: 400px;
 
+		@media (max-width: 800px) {
+			max-width: 600px;
+			min-width: 300px;
+		}
+
 		img {
 			transform: rotate(-9.22deg);
 			max-width: 100%;
-
-			@media (max-width: 700px) {
-				max-width: 100px;
-			}
 		}
 	}
 </style>

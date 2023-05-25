@@ -10,23 +10,21 @@
 		<AppStoreButton />
 	</div>
 
-	<div style:margin-left='20px'>
-		<div class="links">
-			<span class="link-icon"
-				><i class="icon twitter-icon" />
-				<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
-			</span>
+	<div class="links">
+		<span class="link-icon"
+			><i class="icon twitter-icon" />
+			<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
+		</span>
 
-			<span class="link-icon"
-				><i class="icon terms-icon" />
-				<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
-			</span>
+		<span class="link-icon"
+			><i class="icon terms-icon" />
+			<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
+		</span>
 
-			<span class="link-icon"
-				><i class="icon contact-icon" />
-				<a href="www.google.com" class="link">{$_('landing-footer.contact')}</a>
-			</span>
-		</div>
+		<span class="link-icon"
+			><i class="icon contact-icon" />
+			<a href="www.google.com" class="link">{$_('landing-footer.contact')}</a>
+		</span>
 	</div>
 </div>
 
@@ -38,10 +36,19 @@
 		display: grid;
 		grid-template-columns: auto auto;
 		justify-content: space-between;
+		gap: 20px;
 
 		padding: 70px 100px;
 
 		color: white;
+
+		@media (max-width: 1000px) {
+			padding: 70px 15px;
+		}
+
+		@media (max-width: 1200px) {
+			grid-template-columns: auto;
+		}
 	}
 
 	.link {
@@ -61,6 +68,10 @@
 	.links {
 		display: flex;
 		gap: 30px;
+
+		@media (max-width: 700px) {
+			flex-direction: column;
+		}
 	}
 
 	.link-icon {

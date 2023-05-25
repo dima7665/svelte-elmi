@@ -1,6 +1,10 @@
-<script>
+<script lang='ts'>
 	import { _ } from '../../../services/i18n';
+
+	let innerWidth: number;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div class="component">
 	<h1 class="main-title">{$_('landing-theme.title')}</h1>
@@ -31,7 +35,9 @@
 			</div>
 		</div>
 
+		{#if innerWidth > 765}
 		<img class="combo-theme-image" src="landing/themes/main.png" alt="combined themes" />
+		{/if}
 	</div>
 </div>
 
@@ -40,11 +46,19 @@
 		padding: 0 100px;
 
 		color: white;
+
+		@media (max-width: 1000px) {
+			padding: 0 15px;
+		}
 	}
 
 	.main-title {
 		font-size: 50px;
 		min-width: 765px;
+
+		@media (max-width: 765px) {
+			min-width: 300px;
+		}
 	}
 
 	.description {
@@ -57,6 +71,10 @@
 		display: grid;
 		grid-template-columns: minmax(600px, 1fr) 350px;
 		gap: 120px;
+
+		@media (max-width: 765px) {
+			grid-template-columns: minmax(300px, 1fr);
+		}
 	}
 
 	.combo-theme-image,

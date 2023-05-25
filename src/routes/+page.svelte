@@ -39,17 +39,25 @@
 		left: 100px;
 		right: 100px;
 		z-index: 1000;
+
+		@media (max-width: 1000px) {
+			left: 15px;
+			right: 15px;
+		}
 	}
 
 	.white-bg {
 		padding: 0 100px;
 		background-color: white;
+
+		@media (max-width: 1000px) {
+			padding: 0 15px;
+		}
 	}
 
 	.body {
 		padding-top: 160px;
 
 		font-family: 'Inter';
-		// mix-blend-mode: difference;
 	}
 </style>

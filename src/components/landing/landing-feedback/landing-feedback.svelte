@@ -1,12 +1,18 @@
-<script>
+<script lang="ts">
 	import { _ } from '../../../services/i18n';
+
+	let innerWidth: number;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div class="component">
 	<h1 class="title">{$_('landing-feedback.title')}</h1>
 
 	<div class="body">
-		<h3 class="subtitle">{$_('landing-feedback.subtitle')}</h3>
+		{#if innerWidth > 800}
+			<h3 class="subtitle">{$_('landing-feedback.subtitle')}</h3>
+		{/if}
 
 		<div class="form">
 			<input
@@ -39,11 +45,20 @@
 		padding: 0 100px;
 
 		color: white;
+
+		@media (max-width: 1000px) {
+			padding: 0 15px;
+		}
 	}
 
 	.title {
 		font-size: 50px;
 		min-width: 860px;
+
+		@media (max-width: 1000px) {
+			min-width: 300px;
+			font-size: 40px;
+		}
 	}
 
 	.subtitle {
@@ -60,12 +75,20 @@
 
 		border: 1px dashed $color-sky-lightest;
 		border-radius: 10px;
+
+		@media (max-width: 765px) {
+			min-width: 300px;
+		}
 	}
 
 	.form {
 		display: grid;
 		grid-template-columns: minmax(200px, 2fr) minmax(400px, 5fr) 1fr;
 		gap: 20px;
+
+		@media (max-width: 765px) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.input {
