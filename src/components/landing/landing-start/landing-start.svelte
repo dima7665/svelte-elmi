@@ -93,7 +93,7 @@
 
 	.image-container {
 		max-width: 600px;
-		min-width: 400px;
+		min-width: 600px;
 
 		@media (max-width: 800px) {
 			max-width: 600px;

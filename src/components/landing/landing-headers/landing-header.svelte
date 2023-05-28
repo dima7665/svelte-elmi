@@ -42,15 +42,18 @@
 
 			<!-- TODO: fix contact icon -->
 			<button class="link-btn" on:click={linkClick}>
-				<img height="20px" width="20px" src="icons/mail.svg" alt="" />{$_(
-					'landing-header.feedback'
-				)}
+				<img height="20px" width="20px" src="icons/mail.svg" alt="" />
+				{$_('landing-header.feedback')}
 			</button>
 		{/if}
 
 		{#if innerWidth < 765}
-			<button><img height="20px" width="20px" src="icons/download.png" alt="" /></button>
-			<button><img height="31px" width="31px" src="icons/google-drop.png" alt="" /></button>
+			<button class="btn-icon">
+				<img height="41px" width="41px" src="icons/google-mobile.png" alt="" />
+			</button>
+			<button class="btn-icon">
+				<img height="41px" width="41px" src="icons/apple-mobile.png" alt="" />
+			</button>
 		{/if}
 	</div>
 </div>
@@ -73,6 +76,11 @@
 			min-width: 350px;
 			gap: 20px;
 		}
+	}
+
+	.btn-icon {
+		background-color: transparent;
+		border: none;
 	}
 
 	.link-btn {

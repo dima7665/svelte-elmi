@@ -47,6 +47,7 @@
 	}
 
 	.white-bg {
+		width: 100%;
 		padding: 0 100px;
 		background-color: white;
 

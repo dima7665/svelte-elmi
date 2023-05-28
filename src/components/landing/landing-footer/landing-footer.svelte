@@ -11,20 +11,20 @@
 	</div>
 
 	<div class="links">
-		<span class="link-icon"
+		<button class="link-icon"
 			><i class="icon twitter-icon" />
 			<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
-		</span>
+		</button>
 
-		<span class="link-icon"
+		<button class="link-icon"
 			><i class="icon terms-icon" />
 			<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
-		</span>
+		</button>
 
-		<span class="link-icon"
+		<button class="link-icon"
 			><i class="icon contact-icon" />
-			<a href="www.google.com" class="link">{$_('landing-footer.contact')}</a>
-		</span>
+			<a href="mailto:team@elminote.io" class="link">{$_('landing-footer.contact')}</a>
+		</button>
 	</div>
 </div>
 
@@ -49,6 +49,10 @@
 		@media (max-width: 1200px) {
 			grid-template-columns: auto;
 		}
+
+		@media (max-width: 765px) {
+			justify-content: center;
+		}
 	}
 
 	.link {
@@ -69,12 +73,24 @@
 		display: flex;
 		gap: 30px;
 
-		@media (max-width: 700px) {
-			flex-direction: column;
+		@media (max-width: 765px) {
+			display: grid;
+			justify-content: center;
 		}
 	}
 
 	.link-icon {
 		display: flex;
+		background-color: transparent;
+		border: none;
+
+		@media (max-width: 765px) {
+			width: 340px;
+			height: 48px;
+			padding: 12px 16px;
+			justify-content: center;
+			border: 1px solid $color-elmi-base;
+			border-radius: 48px;
+		}
 	}
 </style>

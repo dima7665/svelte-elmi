@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import { _ } from '../../../services/i18n';
 
 	let innerWidth: number;
@@ -17,26 +17,30 @@
 				<p>{$_('landing-theme.description.3')}</p>
 			</div>
 
-			<div class="themes-container">
-				<div class="theme-container">
-					<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
-					<img class="theme-image" src="landing/themes/light.png" alt="light" />
-				</div>
+			<div class="scrollable">
+				<div class="themes-container">
+					<div class="theme-container">
+						<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
+						<img class="theme-image" src="landing/themes/light.png" alt="light" />
+					</div>
 
-				<div class="theme-container">
-					<h5 class="theme-title">{$_('landing-theme.themes.dark')}</h5>
-					<img class="theme-image" src="landing/themes/dark.png" alt="dark" />
-				</div>
+					<div class="theme-container">
+						<h5 class="theme-title">{$_('landing-theme.themes.dark')}</h5>
+						<img class="theme-image" src="landing/themes/dark.png" alt="dark" />
+					</div>
 
-				<div class="theme-container">
-					<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
-					<img class="theme-image" src="landing/themes/mono.png" alt="mono" />
+					<div class="theme-container">
+						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
+						<img class="theme-image" src="landing/themes/mono.png" alt="mono" />
+					</div>
 				</div>
 			</div>
 		</div>
 
 		{#if innerWidth > 765}
-		<img class="combo-theme-image" src="landing/themes/main.png" alt="combined themes" />
+			<div class="image-container">
+				<img class="combo-theme-image" src="landing/themes/main.png" alt="combined themes" />
+			</div>
 		{/if}
 	</div>
 </div>
@@ -69,7 +73,7 @@
 
 	.body {
 		display: grid;
-		grid-template-columns: minmax(600px, 1fr) 350px;
+		grid-template-columns: minmax(600px, 1fr) auto;
 		gap: 120px;
 
 		@media (max-width: 765px) {
@@ -77,10 +81,21 @@
 		}
 	}
 
+	.image-container {
+		min-width: 240px;
+		max-width: 400px;
+	}
+
 	.combo-theme-image,
 	.theme-image {
 		width: 100%;
 		align-self: end;
+	}
+
+	.scrollable {
+		@media (max-width: 765px) {
+			overflow-x: auto;
+		}
 	}
 
 	.themes-container {
