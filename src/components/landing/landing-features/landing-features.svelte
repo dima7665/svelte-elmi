@@ -44,9 +44,9 @@
 		</div>
 	</div>
 	<div class="right-container">
-		<button on:click={onRightClick}
-			><img src="landing/arrows/arrow-right.png" alt="arrow right" loading="lazy" /></button
-		>
+		<button on:click={onRightClick}>
+			<img src="landing/arrows/arrow-right.png" alt="arrow right" loading="lazy" />
+		</button>
 	</div>
 </div>
 

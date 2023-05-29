@@ -83,6 +83,7 @@
 		display: flex;
 		background-color: transparent;
 		border: none;
+		gap: 5px;
 
 		@media (max-width: 765px) {
 			width: 340px;

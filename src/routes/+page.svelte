@@ -30,7 +30,7 @@
 	:global(body) {
 		margin: 0;
 
-		background-image: url('landing/background/bg-black.png');
+		background-image: url('/landing/background/bg-black.png');
 		background-size: cover;
 	}
 
@@ -38,6 +38,7 @@
 		position: fixed;
 		left: 100px;
 		right: 100px;
+		top: 36px;
 		z-index: 1000;
 
 		@media (max-width: 1000px) {
@@ -47,7 +48,7 @@
 	}
 
 	.white-bg {
-		width: 100%;
+		// width: 100%;
 		padding: 0 100px;
 		background-color: white;
 

@@ -31,13 +31,13 @@
 	@import '../../../styles/colors.scss';
 
 	.body {
-		width: 100%;
+		// width: 100%;
 		display: flex;
 
 		padding: 0 100px;
 		color: white;
 
-		background-image: url('landing/background/bg1.png');
+		background-image: url('/landing/background/bg1.png');
 		background-size: cover;
 
 		@media (max-width: 1000px) {

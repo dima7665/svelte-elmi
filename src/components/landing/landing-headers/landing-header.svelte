@@ -8,23 +8,24 @@
 	};
 
 	let innerWidth: number;
+	let scrollY: number;
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:scrollY />
 
-<div class="body">
+<div class="body" class:transparent={scrollY === 0}>
 	<Logo />
 
 	<div class="button-group">
 		{#if innerWidth > 765}
 			<button class="link-btn" on:click={linkClick}>
-				<img height="20px" width="20px" src="icons/heart.png" alt="" />{$_(
+				<img height="24px" width="24px" src="icons/heart.png" alt="" />{$_(
 					'landing-header.overview'
 				)}
 			</button>
 			<Dropdown>
 				<button slot="trigger" class="dropdown-btn">
-					<img height="20px" width="20px" src="icons/download.png" alt="" />
+					<img height="24px" width="24px" src="icons/download.png" alt="" />
 					{$_('landing-header.download')}
 				</button>
 
@@ -42,7 +43,7 @@
 
 			<!-- TODO: fix contact icon -->
 			<button class="link-btn" on:click={linkClick}>
-				<img height="20px" width="20px" src="icons/mail.svg" alt="" />
+				<img height="24px" width="24px" src="icons/mail.svg" alt="" />
 				{$_('landing-header.feedback')}
 			</button>
 		{/if}
@@ -76,6 +77,10 @@
 			min-width: 350px;
 			gap: 20px;
 		}
+
+		&.transparent {
+			background-color: transparent;
+		}
 	}
 
 	.btn-icon {
@@ -86,7 +91,7 @@
 	.link-btn {
 		display: grid;
 		grid-template-columns: auto auto;
-		gap: 3px;
+		gap: 10px;
 		align-items: center;
 
 		border: none;
@@ -98,7 +103,7 @@
 	.dropdown-btn {
 		display: grid;
 		grid-template-columns: auto auto;
-		gap: 3px;
+		gap: 10px;
 		align-items: center;
 
 		height: 48px;
@@ -107,6 +112,7 @@
 		color: white;
 		background-color: $color-primary;
 		border-radius: 48px;
+		border: none;
 	}
 
 	.button-group {
