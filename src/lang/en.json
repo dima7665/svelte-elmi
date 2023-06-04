@@ -15,7 +15,7 @@
 
 	"key-features": {
 		"title": "Priority Key Features",
-		"more": "...and more addition options",
+		"more": "...and more additional options",
 
 		"create": {
 			"title": "Create and edit notes",
@@ -35,28 +35,28 @@
 
 	"more-features": {
 		"editor": {
-			"description": "Advanced text editor, add style, highlight text or add code blocks. 20+ styles and presets ready to use",
+			"description": "Advanced text editor with the ability to add style, text or code blocks. 20+ styles and presets ready to use",
 			"alt": "editor"
 		},
 
 		"properties": {
-			"description": "View document details, add tag and easy discover note anatomy",
+			"description": "View document details, add tags and easily discover note anatomy",
 			"alt": "properties"
 		},
 
 		"categories": {
-			"description": "Eye catchy categories with a lot of illustrations, easy group and divide your materials",
+			"description": "Eye-catching categories with a lot of illustrations, easily group and divide your contents",
 			"alt": "categories"
 		},
 
 		"tags": {
-			"description": "Create custom tags and use grate search system for easy content locate",
+			"description": "Create custom tags and use a great search system for easy content location",
 			"alt": "tags"
 		}
 	},
 
 	"landing-theme": {
-		"title": "Eyes saved colors and contrast",
+		"title": "The eye-friendly advantages of dark mode",
 		"title-tooltip": "User accessibility test ready AA + AAA",
 		"description": {
 			"1": "One of the main benefits of dark mode is that it reduces eye strain and fatigue, especially in low light conditions. Dark mode also reduces the amount of blue light emitted by screens, which can interfere with sleep patterns and cause eye strain over time. For users who spend a lot of time staring at screens, such as those who work in front of computers, dark mode can be a great option for reducing eye strain and fatigue.",
@@ -88,7 +88,7 @@
 
 	"landing-footer": {
 		"news": "News and updates",
-		"terms": "Terms of Conditions",
+		"terms": "Terms and conditions",
 		"contact": "Contact Us"
 	}
 }
