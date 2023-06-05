@@ -10,28 +10,34 @@
 	setupI18n({ withLocale: 'en' });
 </script>
 
-{#await waitLocale() then}
-	<div class="header"><MainPageHeader /></div>
+<div class="container">
+	{#await waitLocale() then}
+		<div class="header"><MainPageHeader /></div>
 
-	<div class="body">
-		<LandingStart />
+		<div class="body">
+			<LandingStart />
 
-		<div class="white-bg"><LandingFeatures /></div>
+			<div class="white-bg"><LandingFeatures /></div>
 
-		<LandingTheme />
-		<LandingFeedback />
-		<LandingFooter />
-	</div>
-{/await}
+			<LandingTheme />
+			<LandingFeedback />
+			<LandingFooter />
+		</div>
+	{/await}
+</div>
 
 <style lang="scss">
 	@import '../styles/fonts.scss';
 
-	:global(body) {
+	.container {
 		margin: 0;
 
 		background-image: url('/landing/background/bg-black.png');
 		background-size: cover;
+	}
+
+	:global(body) {
+		margin: 0;
 	}
 
 	.header {

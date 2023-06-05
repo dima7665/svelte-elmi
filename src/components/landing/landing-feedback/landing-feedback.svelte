@@ -2,11 +2,18 @@
 	import { _ } from '../../../services/i18n';
 
 	let innerWidth: number;
+	let email = '';
+	let message = '';
+
+	const sendClick = () => {
+		email = '';
+		message = '';
+	};
 </script>
 
 <svelte:window bind:innerWidth />
 
-<div class="component">
+<div id="feedback-form" class="feedback-component">
 	<h1 class="title">{$_('landing-feedback.title')}</h1>
 
 	<div class="body">
@@ -16,19 +23,21 @@
 
 		<div class="form">
 			<input
+				bind:value={email}
 				type="email"
 				class="input email"
 				maxlength="80"
 				placeholder={$_('landing-feedback.email')}
 			/>
 			<input
+				bind:value={message}
 				type="text"
 				class="input message"
 				maxlength="200"
 				placeholder={$_('landing-feedback.message')}
 			/>
 
-			<button class="submit-button">Send</button>
+			<button on:click={sendClick} class="submit-button">Send</button>
 		</div>
 
 		<!-- <div class="checkbox">
@@ -41,7 +50,7 @@
 <style lang="scss">
 	@import '../../../styles/colors.scss';
 
-	.component {
+	.feedback-component {
 		padding: 0 100px;
 
 		color: white;

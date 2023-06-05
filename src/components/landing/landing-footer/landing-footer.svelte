@@ -13,12 +13,14 @@
 	<div class="links">
 		<button class="link-icon"
 			><i class="icon twitter-icon" />
-			<a href="www.google.com" class="link">{$_('landing-footer.news')}</a>
+			<a href="https://twitter.com/ElmiNote" rel="external" class="link">
+				{$_('landing-footer.news')}
+			</a>
 		</button>
 
 		<button class="link-icon"
 			><i class="icon terms-icon" />
-			<a href="www.google.com" class="link">{$_('landing-footer.terms')}</a>
+			<a href="/terms" class="link">{$_('landing-footer.terms')}</a>
 		</button>
 
 		<button class="link-icon"

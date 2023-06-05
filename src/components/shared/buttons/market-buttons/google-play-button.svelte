@@ -1,8 +1,10 @@
 <script>
 	import { _ } from '../../../../services/i18n';
+
+	export let color = 'white';
 </script>
 
-<div class="container">
+<div class="container" style:--button-color={color}>
 	<div class="image-container"><img src="landing/google-play-64.png" alt="google play link" /></div>
 
 	<div class="text-container">

@@ -3,8 +3,12 @@
 	import Logo from '../../shared/components/logo.svelte';
 	import Dropdown from '../../shared/buttons/dropdown/dropdown.svelte';
 
-	const linkClick = (event: any) => {
-		console.log(event);
+	const overviewClick = () => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
+
+	const feedbackClick = () => {
+		document.getElementById('feedback-form')?.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	let innerWidth: number;
@@ -14,11 +18,11 @@
 <svelte:window bind:innerWidth bind:scrollY />
 
 <div class="body" class:transparent={scrollY === 0}>
-	<Logo />
+	<a href="/"><Logo /></a>
 
 	<div class="button-group">
 		{#if innerWidth > 765}
-			<button class="link-btn" on:click={linkClick}>
+			<button class="link-btn" on:click={overviewClick}>
 				<img height="24px" width="24px" src="icons/heart.png" alt="" />{$_(
 					'landing-header.overview'
 				)}
@@ -42,7 +46,7 @@
 			</Dropdown>
 
 			<!-- TODO: fix contact icon -->
-			<button class="link-btn" on:click={linkClick}>
+			<button class="link-btn" on:click={feedbackClick}>
 				<img height="24px" width="24px" src="icons/mail.svg" alt="" />
 				{$_('landing-header.feedback')}
 			</button>
@@ -98,6 +102,8 @@
 		font-size: 16px;
 		color: white;
 		background-color: transparent;
+
+		cursor: pointer;
 	}
 
 	.dropdown-btn {
@@ -113,6 +119,8 @@
 		background-color: $color-primary;
 		border-radius: 48px;
 		border: none;
+
+		cursor: pointer;
 	}
 
 	.button-group {
@@ -139,7 +147,7 @@
 		align-items: center;
 
 		font-family: 'Inter';
-		cursor: context-menu;
+		cursor: pointer;
 	}
 
 	.color-primary {

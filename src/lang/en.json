@@ -4,6 +4,7 @@
 	"landing-start": {
 		"title": "Unique Quick Notes mobile application for",
 		"role": {
+			"everyone": "everyone",
 			"developer": "Developers"
 		},
 		"description": "ElmiNote app is a powerful and versatile tool for organizing your thoughts and ideas on-the-go. With a clean and intuitive interface, creating, editing, and managing your notes has never been easier. Whether you're taking notes during a meeting, jotting down a to-do list, or brainstorming for your next project, the Notes app provides a seamless and efficient experience.",
@@ -75,7 +76,8 @@
 
 	"landing-feedback": {
 		"title": "Have an idea or ready to feedback?",
-		"subtitle": "Use this quick form to send your message, also you can get special updates! No spam, ever.",
+		"subtitle": "Use this quick form to send your message.",
+		"subtitleX": "Use this quick form to send your message, also you can get special updates! No spam, ever.",
 		"subscribe": "Subscribe me. Your address will only be used for news about Elminote. You can easily unsubscribe any time.",
 		"email": "Your email",
 		"message": "Message",
@@ -92,5 +94,10 @@
 		"news": "News and updates",
 		"terms": "Terms and conditions",
 		"contact": "Contact Us"
+	},
+
+	"terms": {
+		"title": "Legal infromation",
+		"text": "Try-hard glossier organic poke farm-to-table blog franzen. Raw mixtape gentrify marfa umami.\n Yr edison shoreditch fingerstache squid. Hella hexagon LaCroix vhs brooklyn 90's. Af hexagon 8-bit yuccie taiyaki ugh pin. Try-hard post-ironic haven't vibecession sus hot ipsum bodega. \nJianbing crucifix distillery typewriter fit retro hoodie snackwave gastropub. Whatever synth bun food bicycle. It master craft pork biodiesel v it actually. Cronut pok diy viral chicken. Meggings offal church-key pour-over lumbersexual affogato artisan charcoal. Bushwick cliche belly hell farm-to-table portland everyday. Lo-fi fund succulents kinfolk shabby a dollar enamel. Plaid truffaut jomo salvia raw dreamcatcher it single-origin lyft.\nGatekeep bespoke trade pork v tousled."
 	}
 }

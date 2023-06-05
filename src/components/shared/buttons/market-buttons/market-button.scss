@@ -5,11 +5,13 @@
 	display: grid;
 	grid-template-columns: 40px 1fr;
 
-	color: white;
+	color: var(--button-color, white);
 
 	mix-blend-mode: difference;
-	border: 1px solid white;
+	border: 1px solid var(--button-color, white);
 	border-radius: 4px;
+
+	cursor: pointer;
 }
 
 .image-container {

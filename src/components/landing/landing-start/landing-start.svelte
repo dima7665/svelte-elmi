@@ -5,7 +5,7 @@
 	import { getRoleI18n } from './landing-start.i18n';
 
 	const loc = $locale || 'en';
-	const role = getRoleI18n(loc).developer;
+	const role = getRoleI18n(loc).everyone;
 </script>
 
 <div class="body">
