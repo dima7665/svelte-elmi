@@ -14,7 +14,7 @@
 	.tooltip {
 		position: absolute;
 		max-width: 225px;
-		min-width: 225px;
+		min-width: 100px;
 		padding: 4px 8px;
 		font-size: 14px;
 		line-height: 20px;
@@ -22,7 +22,7 @@
 
 		color: white;
 		background-color: $color-primary;
-		border-radius: 4px;
+		border-radius: 8px;
 	}
 
 	.tooltip:after {

@@ -1,7 +1,15 @@
 <script lang="ts">
 	import { _ } from '../../../services/i18n';
+	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
+	import Carousel from 'svelte-carousel';
 
-	let innerWidth: number;
+	let innerWidth: number = 1;
+	let width: number = 1;
+	let particlesToShow = 1;
+
+	$: if (width) {
+		particlesToShow = Math.floor(width / 250);
+	}
 </script>
 
 <svelte:window bind:innerWidth />
@@ -11,30 +19,55 @@
 
 	<div class="body">
 		<div class="description-container">
-			<div class="description">
+			<div class="description" bind:clientWidth={width}>
 				<p>{$_('landing-theme.description.1')}</p>
 				<p>{$_('landing-theme.description.2')}</p>
 				<p>{$_('landing-theme.description.3')}</p>
 			</div>
 
-			<div class="scrollable">
-				<div class="themes-container">
-					<div class="theme-container">
+			<Carousel dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
+				<div class="outer-container">
+					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
 						<img class="theme-image" src="landing/themes/light.png" alt="light" />
 					</div>
+				</div>
 
-					<div class="theme-container">
+				<div class="outer-container">
+					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.dark')}</h5>
 						<img class="theme-image" src="landing/themes/dark.png" alt="dark" />
 					</div>
+				</div>
 
-					<div class="theme-container">
+				<div class="outer-container">
+					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
 						<img class="theme-image" src="landing/themes/mono.png" alt="mono" />
+
+						<TooltipStatic tooltipTop={300} tooltipLeft={30}>
+							{$_('coming_soon')}
+						</TooltipStatic>
 					</div>
 				</div>
-			</div>
+
+				<div class="arrow-container" slot="prev">
+					<img
+						on:click={showPrevPage}
+						src="landing/arrows/arrow-left.png"
+						alt="arrow left"
+						loading="lazy"
+					/>
+				</div>
+				<div class="arrow-container" slot="next">
+					<img
+						on:click={showNextPage}
+						src="landing/arrows/arrow-right.png"
+						alt="arrow right"
+						loading="lazy"
+					/>
+				</div>
+			</Carousel>
 		</div>
 
 		{#if innerWidth > 765}
@@ -92,23 +125,27 @@
 		align-self: end;
 	}
 
-	.scrollable {
-		@media (max-width: 765px) {
-			overflow-x: auto;
-		}
+	.outer-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	.themes-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 40px;
-	}
-
-	.theme-container {
+	.inner-container {
+		position: relative;
 		width: 180px;
 	}
 
 	.theme-title {
 		font-size: 18px;
+	}
+
+	.arrow-container {
+		display: flex;
+		align-items: center;
+
+		img {
+			cursor: pointer;
+		}
 	}
 </style>

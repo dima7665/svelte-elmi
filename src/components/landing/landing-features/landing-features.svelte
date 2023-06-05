@@ -1,56 +1,62 @@
-<script>
+<script lang="ts">
 	import { _ } from '../../../services/i18n';
 	import FeatureCard from '../../shared/cards/feature-card.svelte';
-	import LandingStart from '../landing-start/landing-start.svelte';
 	import LandingFeaturesMore from './landing-features-more.svelte';
+	import Carousel from 'svelte-carousel';
 
 	let features = ['create', 'organize', 'sync'];
+	let innerWidth: number = 1;
+	let particlesToShow = 1;
 
-	const onLeftClick = () => {
-		features = [features[features.length - 1], ...features.slice(0, -1)];
-	};
-
-	const onRightClick = () => {
-		features = [...features.slice(1), features[0]];
-	};
+	$: if (innerWidth) {
+		particlesToShow = Math.floor((innerWidth + 200) / 500);
+	}
 </script>
+
+<svelte:window bind:innerWidth />
 
 <h3 class="section-title">{$_('key-features.title')}</h3>
 
 <div class="container">
-	<div class="left-container">
-		<button on:click={onLeftClick}
-			><img src="landing/arrows/arrow-left.png" alt="arrow left" loading="lazy" /></button
-		>
-	</div>
-	<div class="features-scrollable">
-		<div class="features-container">
-			{#each features as feature}
-				<div class="feature-card">
-					<FeatureCard>
-						<img
-							slot="image"
-							src={`landing/key-features/feature-${feature}.png`}
-							alt={`${feature}`}
-							loading="lazy"
-						/>
-						<p slot="title" class="title">{$_(`key-features.${feature}.title`)}</p>
-						<p slot="description" class="description">
-							{$_(`key-features.${feature}.description`)}
-						</p>
-					</FeatureCard>
-				</div>
-			{/each}
+	<Carousel dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
+		{#each features as feature}
+			<div class="feature-card">
+				<FeatureCard>
+					<img
+						slot="image"
+						src={`landing/key-features/feature-${feature}.png`}
+						alt={`${feature}`}
+						loading="lazy"
+					/>
+					<p slot="title" class="title">{$_(`key-features.${feature}.title`)}</p>
+					<p slot="description" class="description">
+						{$_(`key-features.${feature}.description`)}
+					</p>
+				</FeatureCard>
+			</div>
+		{/each}
+		<div class="arrow-container" slot="prev">
+			<img
+				on:click={showPrevPage}
+				src="landing/arrows/arrow-left.png"
+				alt="arrow left"
+				loading="lazy"
+			/>
 		</div>
-	</div>
-	<div class="right-container">
-		<button on:click={onRightClick}>
-			<img src="landing/arrows/arrow-right.png" alt="arrow right" loading="lazy" />
-		</button>
-	</div>
+		<div class="arrow-container" slot="next">
+			<img
+				on:click={showNextPage}
+				src="landing/arrows/arrow-right.png"
+				alt="arrow right"
+				loading="lazy"
+			/>
+		</div>
+	</Carousel>
 </div>
 
-<LandingFeaturesMore />
+<div class='more-container'>
+	<LandingFeaturesMore />
+</div>
 
 <style lang="scss">
 	.section-title {
@@ -67,62 +73,20 @@
 	}
 
 	.container {
-		display: grid;
-		grid-template-columns: 50px 1fr 50px;
-		gap: 50px;
-		justify-items: center;
-
-		@media (max-width: 765px) {
-			gap: 30px;
-		}
-
-		@media (max-width: 500px) {
-			grid-template-columns: auto;
-		}
+		display: flex;
 	}
 
-	.left-container,
-	.right-container {
-		display: grid;
-		place-content: center;
-
-		@media (max-width: 500px) {
-			display: none;
-		}
-
-		button {
-			border: none;
-			background-color: transparent;
-		}
+	.more-container {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.features-scrollable {
-		width: 100%;
+	.arrow-container {
+		display: flex;
+		align-items: center;
 
-		@media (min-width: 765px) and (max-width: 1000px) {
-			max-width: 540px;
-			overflow-x: auto;
-		}
-
-		@media (max-width: 765px) {
-			max-width: 300px;
-			overflow-x: auto;
-		}
-	}
-
-	.features-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 70px;
-
-		@media (min-width: 765px) and (max-width: 1000px) {
-			display: flex;
-		}
-
-		@media (max-width: 765px) {
-			grid-template-columns: minmax(1fr, 300px);
-			grid-template-rows: 1fr;
-			min-width: 1200px;
+		img {
+			cursor: pointer;
 		}
 	}
 
