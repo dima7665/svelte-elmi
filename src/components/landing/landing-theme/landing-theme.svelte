@@ -45,7 +45,7 @@
 						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
 						<img class="theme-image" src="landing/themes/mono.png" alt="mono" />
 
-						<TooltipStatic tooltipTop={300} tooltipLeft={30}>
+						<TooltipStatic tooltipTop={0} tooltipLeft={50}>
 							{$_('coming_soon')}
 						</TooltipStatic>
 					</div>
@@ -70,7 +70,7 @@
 			</Carousel>
 		</div>
 
-		{#if innerWidth > 765}
+		{#if innerWidth > 1000}
 			<div class="image-container">
 				<img class="combo-theme-image" src="landing/themes/main.png" alt="combined themes" />
 			</div>
@@ -106,17 +106,21 @@
 
 	.body {
 		display: grid;
-		grid-template-columns: minmax(600px, 1fr) auto;
+		grid-template-columns: minmax(600px, 1fr) 1fr;
 		gap: 120px;
 
-		@media (max-width: 765px) {
+		@media (max-width: 1000px) {
 			grid-template-columns: minmax(300px, 1fr);
 		}
 	}
 
 	.image-container {
 		min-width: 240px;
-		max-width: 400px;
+		max-width: 350px;
+
+		@media (min-width: 1200px) {
+			max-width: 400px;
+		}
 	}
 
 	.combo-theme-image,
@@ -137,6 +141,7 @@
 	}
 
 	.theme-title {
+		margin: 40px 0 20px;
 		font-size: 18px;
 	}
 

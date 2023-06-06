@@ -93,6 +93,10 @@
 	.feature-card {
 		img {
 			width: 250px;
+
+			@media (max-width: 400px) {
+				width: 220px;
+		}
 		}
 
 		.title {

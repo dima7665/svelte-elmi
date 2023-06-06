@@ -89,6 +89,12 @@
 		grid-auto-flow: column;
 		gap: 20px;
 		justify-content: space-between;
+
+		@media (max-width: 450px) {
+			width: auto;
+			grid-auto-flow: row;
+			justify-content: center;
+		}
 	}
 
 	.image-container {
@@ -102,7 +108,7 @@
 
 		img {
 			transform: rotate(-9.22deg);
-			max-width: 100%;
+			max-width: 90%;
 		}
 	}
 </style>

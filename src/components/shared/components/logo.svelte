@@ -1,5 +1,13 @@
 <script>
-    export let color = 'white';
+	export let color = 'white';
 </script>
 
-<img src="logo_{color}.png" alt="logo">
+<img class="logo" src="logo_{color}.png" alt="logo" />
+
+<style lang="scss">
+	.logo {
+		@media (max-width: 400px) {
+			width: 170px;
+		}
+	}
+</style>

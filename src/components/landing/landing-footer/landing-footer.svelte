@@ -69,6 +69,12 @@
 		grid-auto-flow: column;
 		gap: 20px;
 		justify-content: space-between;
+
+		@media (max-width: 450px) {
+			width: auto;
+			grid-auto-flow: row;
+			justify-content: center;
+		}
 	}
 
 	.links {

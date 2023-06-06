@@ -80,13 +80,13 @@
 		flex-direction: column;
 		padding: 20px 30px 30px;
 		gap: 20px;
-		min-width: 850px;
+		// min-width: 850px;
 
 		border: 1px dashed $color-sky-lightest;
 		border-radius: 10px;
 
 		@media (max-width: 765px) {
-			min-width: 300px;
+			min-width: 200px;
 		}
 	}
 
@@ -94,6 +94,10 @@
 		display: grid;
 		grid-template-columns: minmax(200px, 2fr) minmax(400px, 5fr) 1fr;
 		gap: 20px;
+
+		@media (max-width: 900px) {
+			grid-template-columns: minmax(200px, 2fr) minmax(400px, 5fr);
+		}
 
 		@media (max-width: 765px) {
 			grid-template-columns: 1fr;

@@ -51,6 +51,12 @@
 			left: 15px;
 			right: 15px;
 		}
+
+		@media (max-width: 600px) {
+			left: 10px;
+			right: 10px;
+			top: 10px;
+		}
 	}
 
 	.white-bg {
@@ -65,7 +71,7 @@
 
 	.body {
 		padding-top: 160px;
-
 		font-family: 'Inter';
+		overflow: hidden;
 	}
 </style>

@@ -78,8 +78,9 @@
 		border-radius: 25px;
 
 		@media (max-width: 765px) {
-			min-width: 350px;
+			min-width: 300px;
 			gap: 20px;
+			padding: 10px;
 		}
 
 		&.transparent {

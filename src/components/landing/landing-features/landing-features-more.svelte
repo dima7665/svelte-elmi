@@ -124,5 +124,13 @@
 		position: relative;
 		align-items: end;
 		z-index: 10;
+
+		img {
+			max-width: 280px;
+
+			@media (max-width: 400px) {
+				max-width: 100%;
+			}
+		}
 	}
 </style>
