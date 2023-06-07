@@ -124,10 +124,11 @@
 		min-width: 600px;
 		margin-left: -100px;
 
-		@media (max-width: 800px) {
+		@media (max-width: 1000px) {
 			max-width: 600px;
 			min-width: 300px;
-			margin-left: 0;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		img {
@@ -137,7 +138,7 @@
 			@media (max-width: 1000px) {
 				max-width: 100%;
 				transform: rotate(0deg);
-		}
+			}
 		}
 	}
 </style>

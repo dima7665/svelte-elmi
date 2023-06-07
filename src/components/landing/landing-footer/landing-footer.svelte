@@ -33,7 +33,7 @@
 			</button>
 		</div>
 
-		<div class="made">Made with 🦄 Elminote v1.0 © 2023</div>
+		<div class="made">Made with Elminote © 2023</div>
 	</div>
 </div>
 
@@ -124,6 +124,7 @@
 			height: 48px;
 			padding: 12px 16px;
 			justify-content: center;
+			align-items: center;
 			border: 1px solid $color-elmi-base;
 			border-radius: 48px;
 			gap: 20px;
