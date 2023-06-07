@@ -44,7 +44,7 @@
 		margin-right: auto;
 
 		padding: 70px 100px;
-
+		
 		color: white;
 
 		@media (max-width: 1000px) {
