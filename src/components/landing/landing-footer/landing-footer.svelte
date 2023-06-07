@@ -10,23 +10,30 @@
 		<AppStoreButton />
 	</div>
 
-	<div class="links">
-		<button class="link-icon"
-			><i class="icon twitter-icon" />
-			<a href="https://twitter.com/ElmiNote" rel="external" class="link">
-				{$_('landing-footer.news')}
-			</a>
-		</button>
+	<div class="right-side">
+		<div class="links">
+			<button class="link-icon">
+				<!-- <i class="icon twitter-icon" /> -->
+				<img height="20px" width="20px" src="icons/twitter.png" alt="" />
+				<a href="https://twitter.com/ElmiNote" rel="external" class="link">
+					{$_('landing-footer.news')}
+				</a>
+			</button>
 
-		<button class="link-icon"
-			><i class="icon terms-icon" />
-			<a href="/terms" class="link">{$_('landing-footer.terms')}</a>
-		</button>
+			<button class="link-icon">
+				<!-- <i class="icon terms-icon" /> -->
+				<img height="20px" width="20px" src="icons/terms.png" alt="" />
+				<a href="/terms" class="link">{$_('landing-footer.terms')}</a>
+			</button>
 
-		<button class="link-icon"
-			><i class="icon contact-icon" />
-			<a href="mailto:team@elminote.io" class="link">{$_('landing-footer.contact')}</a>
-		</button>
+			<button class="link-icon">
+				<!-- <i class="icon contact-icon" /> -->
+				<img height="20px" width="20px" src="icons/contact.png" alt="" />
+				<a href="mailto:team@elminote.io" class="link">{$_('landing-footer.contact')}</a>
+			</button>
+		</div>
+
+		<div class="made">Made with 🦄 Elminote v1.0 © 2023</div>
 	</div>
 </div>
 
@@ -51,12 +58,10 @@
 			padding: 70px 15px;
 		}
 
-		@media (max-width: 1200px) {
+		@media (max-width: 900px) {
 			grid-template-columns: auto;
-		}
-
-		@media (max-width: 765px) {
 			justify-content: center;
+			gap: 50px;
 		}
 	}
 
@@ -64,10 +69,12 @@
 		font-size: 16px;
 		font-weight: 500;
 		color: $color-elmi-base;
+
+		text-decoration: unset;
 	}
 
 	.app-buttons {
-		width: 400px;
+		// width: 400px;
 		display: grid;
 		grid-auto-flow: column;
 		gap: 20px;
@@ -80,11 +87,27 @@
 		}
 	}
 
+	.right-side {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.made {
+		display: flex;
+		justify-content: end;
+		font-size: 14px;
+
+		@media (max-width: 900px) {
+			justify-content: center;
+		}
+	}
+
 	.links {
 		display: flex;
 		gap: 30px;
 
-		@media (max-width: 765px) {
+		@media (max-width: 1200px) {
 			display: grid;
 			justify-content: center;
 		}
@@ -96,13 +119,14 @@
 		border: none;
 		gap: 5px;
 
-		@media (max-width: 765px) {
+		@media (max-width: 900px) {
 			width: 340px;
 			height: 48px;
 			padding: 12px 16px;
 			justify-content: center;
 			border: 1px solid $color-elmi-base;
 			border-radius: 48px;
+			gap: 20px;
 		}
 	}
 </style>

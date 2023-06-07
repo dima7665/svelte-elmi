@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.11.0",
 		"svelte-carousel": "^1.0.25",
 		"svelte-i18n": "^3.6.0"
 	}

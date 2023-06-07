@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { _, locale } from '../../../services/i18n';
 	import GooglePlayButton from '../../shared/buttons/market-buttons/google-play-button.svelte';
 	import AppStoreButton from '../../shared/buttons/market-buttons/app-store-button.svelte';
@@ -6,7 +6,11 @@
 
 	const loc = $locale || 'en';
 	const role = getRoleI18n(loc).everyone;
+
+	let innerWidth: number;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div class="start-component">
 	<div class="start-body">
@@ -23,7 +27,13 @@
 
 		<div class="image-container">
 			<div class="phones-image">
-				<img src="landing/phones.png" alt="phones" />
+				{#if innerWidth > 1000}
+					<img src="landing/phones.png" alt="phones" />
+				{/if}
+
+				{#if innerWidth <= 1000}
+					<img src="landing/phones2.png" alt="phones" />
+				{/if}
 			</div>
 		</div>
 	</div>
@@ -33,13 +43,15 @@
 	@import '../../../styles/colors.scss';
 
 	.start-component {
-		// width: 100%;
-		// display: flex;
 		padding: 0 100px;
 		color: white;
 
 		background-image: url('/landing/background/bg1.png');
 		background-size: cover;
+
+		@media (max-width: 1000px) {
+			padding: 0 15px;
+		}
 	}
 
 	.start-body {
@@ -88,6 +100,7 @@
 
 			@media (max-width: 765px) {
 				min-width: 300px;
+				padding-right: 0;
 			}
 		}
 	}
@@ -114,11 +127,17 @@
 		@media (max-width: 800px) {
 			max-width: 600px;
 			min-width: 300px;
+			margin-left: 0;
 		}
 
 		img {
 			transform: rotate(-9.22deg);
 			max-width: 120%;
+
+			@media (max-width: 1000px) {
+				max-width: 100%;
+				transform: rotate(0deg);
+		}
 		}
 	}
 </style>

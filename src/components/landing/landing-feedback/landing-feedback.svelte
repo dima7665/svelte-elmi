@@ -1,11 +1,31 @@
 <script lang="ts">
 	import { _ } from '../../../services/i18n';
+	import emailjs from '@emailjs/browser';
 
 	let innerWidth: number;
 	let email = '';
 	let message = '';
 
+	const emailTemplate = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
 	const sendClick = () => {
+		if (!message || !email || !emailTemplate.test(email)) {
+			return;
+		}
+
+		emailjs.send(
+			'service_kvw1ils',
+			'template_1',
+			{
+				email,
+				reply_to: email,
+				subject: 'feedback from elminote.io',
+				message,
+				username: 'username'
+			},
+			'6XuN_ScHHB4NL4p4Z'
+		);
+
 		email = '';
 		message = '';
 	};
@@ -126,6 +146,7 @@
 		color: white;
 		font-size: 16px;
 		font-weight: 500;
+		border: none;
 	}
 
 	.checkbox {

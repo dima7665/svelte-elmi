@@ -47,7 +47,7 @@
 
 			<!-- TODO: fix contact icon -->
 			<button class="link-btn" on:click={feedbackClick}>
-				<img height="24px" width="24px" src="icons/mail.svg" alt="" />
+				<img height="24px" width="24px" src="icons/mail.png" alt="" />
 				{$_('landing-header.feedback')}
 			</button>
 		{/if}
