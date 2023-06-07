@@ -39,7 +39,6 @@
 		grid-template-columns: auto auto;
 		justify-content: space-between;
 		gap: 20px;
-
 		max-width: 1320px;
 		margin-left: auto;
 		margin-right: auto;
