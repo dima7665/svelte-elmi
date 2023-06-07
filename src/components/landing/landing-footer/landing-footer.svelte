@@ -40,6 +40,10 @@
 		justify-content: space-between;
 		gap: 20px;
 
+		max-width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+
 		padding: 70px 100px;
 
 		color: white;

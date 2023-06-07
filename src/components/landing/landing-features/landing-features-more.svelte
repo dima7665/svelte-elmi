@@ -16,7 +16,7 @@
 <h3 class="section-title">{$_('key-features.more')}</h3>
 
 <div style:display={'flex'}>
-	<Carousel dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
+	<Carousel swiping={false} dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
 		<div class="outer-container">
 			<div style:z-index="101" class="inner-container">
 				<img

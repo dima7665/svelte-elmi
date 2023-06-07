@@ -46,6 +46,9 @@
 		right: 100px;
 		top: 36px;
 		z-index: 1000;
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
 
 		@media (max-width: 1000px) {
 			left: 15px;

@@ -53,6 +53,10 @@
 	.feedback-component {
 		padding: 0 100px;
 
+		max-width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+
 		color: white;
 
 		@media (max-width: 1000px) {
@@ -80,7 +84,9 @@
 		flex-direction: column;
 		padding: 20px 30px 30px;
 		gap: 20px;
-		// min-width: 850px;
+		max-width: 1260px; // 1320 - 30*2
+		margin-left: auto;
+		margin-right: auto;
 
 		border: 1px dashed $color-sky-lightest;
 		border-radius: 10px;

@@ -15,50 +15,58 @@
 
 <svelte:window bind:innerWidth />
 
-<h3 class="section-title">{$_('key-features.title')}</h3>
+<div class="feature-component">
+	<h3 class="section-title">{$_('key-features.title')}</h3>
 
-<div class="container">
-	<Carousel dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
-		{#each features as feature}
-			<div class="feature-card">
-				<FeatureCard>
-					<img
-						slot="image"
-						src={`landing/key-features/feature-${feature}.png`}
-						alt={`${feature}`}
-						loading="lazy"
-					/>
-					<p slot="title" class="title">{$_(`key-features.${feature}.title`)}</p>
-					<p slot="description" class="description">
-						{$_(`key-features.${feature}.description`)}
-					</p>
-				</FeatureCard>
+	<div class="container">
+		<Carousel dots={true} {particlesToShow} swiping={false} let:showPrevPage let:showNextPage>
+			{#each features as feature}
+				<div class="feature-card">
+					<FeatureCard>
+						<img
+							slot="image"
+							src={`landing/key-features/feature-${feature}.png`}
+							alt={`${feature}`}
+							loading="lazy"
+						/>
+						<p slot="title" class="title">{$_(`key-features.${feature}.title`)}</p>
+						<p slot="description" class="description">
+							{$_(`key-features.${feature}.description`)}
+						</p>
+					</FeatureCard>
+				</div>
+			{/each}
+			<div class="arrow-container" slot="prev">
+				<img
+					on:click={showPrevPage}
+					src="landing/arrows/arrow-left.png"
+					alt="arrow left"
+					loading="lazy"
+				/>
 			</div>
-		{/each}
-		<div class="arrow-container" slot="prev">
-			<img
-				on:click={showPrevPage}
-				src="landing/arrows/arrow-left.png"
-				alt="arrow left"
-				loading="lazy"
-			/>
-		</div>
-		<div class="arrow-container" slot="next">
-			<img
-				on:click={showNextPage}
-				src="landing/arrows/arrow-right.png"
-				alt="arrow right"
-				loading="lazy"
-			/>
-		</div>
-	</Carousel>
-</div>
+			<div class="arrow-container" slot="next">
+				<img
+					on:click={showNextPage}
+					src="landing/arrows/arrow-right.png"
+					alt="arrow right"
+					loading="lazy"
+				/>
+			</div>
+		</Carousel>
+	</div>
 
-<div class='more-container'>
-	<LandingFeaturesMore />
+	<div class="more-container">
+		<LandingFeaturesMore />
+	</div>
 </div>
 
 <style lang="scss">
+	.feature-component {
+		max-width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.section-title {
 		margin-top: 0;
 		padding-top: 50px;
@@ -96,7 +104,7 @@
 
 			@media (max-width: 400px) {
 				width: 220px;
-		}
+			}
 		}
 
 		.title {

@@ -8,21 +8,23 @@
 	const role = getRoleI18n(loc).everyone;
 </script>
 
-<div class="body">
-	<div class="text-container">
-		<h3 class="title">
-			{$_('landing-start.title')} <span class="role">{role}</span>
-		</h3>
-		<p class="description">{$_('landing-start.description')}</p>
-		<div class="app-buttons">
-			<GooglePlayButton />
-			<AppStoreButton />
+<div class="start-component">
+	<div class="start-body">
+		<div class="text-container">
+			<h3 class="title">
+				{$_('landing-start.title')} <span class="role">{role}</span>
+			</h3>
+			<p class="description">{$_('landing-start.description')}</p>
+			<div class="app-buttons">
+				<GooglePlayButton />
+				<AppStoreButton />
+			</div>
 		</div>
-	</div>
 
-	<div class="image-container">
-		<div class="phones-image">
-			<img src="landing/phones.png" alt="phones" />
+		<div class="image-container">
+			<div class="phones-image">
+				<img src="landing/phones.png" alt="phones" />
+			</div>
 		</div>
 	</div>
 </div>
@@ -30,15 +32,21 @@
 <style lang="scss">
 	@import '../../../styles/colors.scss';
 
-	.body {
+	.start-component {
 		// width: 100%;
-		display: flex;
-
+		// display: flex;
 		padding: 0 100px;
 		color: white;
 
 		background-image: url('/landing/background/bg1.png');
 		background-size: cover;
+	}
+
+	.start-body {
+		display: flex;
+		max-width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
 
 		@media (max-width: 1000px) {
 			flex-direction: column;
@@ -48,7 +56,7 @@
 	}
 
 	.text-container {
-		width: 800px;
+		// width: 800px;
 
 		@media (max-width: 800px) {
 			width: 100%;
@@ -71,6 +79,7 @@
 
 		.description {
 			min-width: 600px;
+			padding-right: 100px;
 			padding-top: 40px;
 			padding-bottom: 40px;
 
@@ -100,6 +109,7 @@
 	.image-container {
 		max-width: 600px;
 		min-width: 600px;
+		margin-left: -100px;
 
 		@media (max-width: 800px) {
 			max-width: 600px;
@@ -108,7 +118,7 @@
 
 		img {
 			transform: rotate(-9.22deg);
-			max-width: 90%;
+			max-width: 120%;
 		}
 	}
 </style>

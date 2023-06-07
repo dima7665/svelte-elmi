@@ -25,7 +25,7 @@
 				<p>{$_('landing-theme.description.3')}</p>
 			</div>
 
-			<Carousel dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
+			<Carousel swiping={false} dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
@@ -82,6 +82,10 @@
 	.component {
 		padding: 0 100px;
 
+		max-width: 1320px;
+		margin-left: auto;
+		margin-right: auto;
+
 		color: white;
 
 		@media (max-width: 1000px) {
@@ -106,7 +110,7 @@
 
 	.body {
 		display: grid;
-		grid-template-columns: minmax(600px, 1fr) 1fr;
+		grid-template-columns: minmax(600px, 3fr) 2fr;
 		gap: 120px;
 
 		@media (max-width: 1000px) {
@@ -117,9 +121,10 @@
 	.image-container {
 		min-width: 240px;
 		max-width: 350px;
+		margin-left: auto;
 
 		@media (min-width: 1200px) {
-			max-width: 400px;
+			max-width: 420px;
 		}
 	}
 
