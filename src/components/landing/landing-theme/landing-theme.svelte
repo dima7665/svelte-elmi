@@ -29,21 +29,21 @@
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
-						<img class="theme-image" src="landing/themes/light.png" alt="light" />
+						<img class="theme-image" src="/landing/themes/light.png" alt="light" />
 					</div>
 				</div>
 
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.dark')}</h5>
-						<img class="theme-image" src="landing/themes/dark.png" alt="dark" />
+						<img class="theme-image" src="/landing/themes/dark.png" alt="dark" />
 					</div>
 				</div>
 
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
-						<img class="theme-image" src="landing/themes/mono.png" alt="mono" />
+						<img class="theme-image" src="/landing/themes/mono.png" alt="mono" />
 
 						<TooltipStatic tooltipTop={0} tooltipLeft={50}>
 							{$_('coming_soon')}
@@ -54,7 +54,7 @@
 				<div class="arrow-container" slot="prev">
 					<img
 						on:click={showPrevPage}
-						src="landing/arrows/arrow-left.png"
+						src="/landing/arrows/arrow-left.svg"
 						alt="arrow left"
 						loading="lazy"
 					/>
@@ -62,7 +62,7 @@
 				<div class="arrow-container" slot="next">
 					<img
 						on:click={showNextPage}
-						src="landing/arrows/arrow-right.png"
+						src="/landing/arrows/arrow-right.svg"
 						alt="arrow right"
 						loading="lazy"
 					/>
@@ -72,7 +72,7 @@
 
 		{#if innerWidth > 1000}
 			<div class="image-container">
-				<img class="combo-theme-image" src="landing/themes/main.png" alt="combined themes" />
+				<img class="combo-theme-image" src="/landing/themes/main.png" alt="combined themes" />
 			</div>
 		{/if}
 	</div>

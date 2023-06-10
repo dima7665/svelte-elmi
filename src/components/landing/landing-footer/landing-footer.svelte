@@ -1,45 +1,42 @@
 <script>
 	import { _ } from '../../../services/i18n';
-	import GooglePlayButton from '../../shared/buttons/market-buttons/google-play-button.svelte';
-	import AppStoreButton from '../../shared/buttons/market-buttons/app-store-button.svelte';
 </script>
 
 <div class="body">
 	<div class="app-buttons">
-		<GooglePlayButton />
-		<AppStoreButton />
+		<img src="/landing/badge_google.svg" alt="google play link" />
+		<img src="/landing/badge_apple.svg" alt="apple store link" />
+
+		<!-- <GooglePlayButton /> -->
+		<!-- <AppStoreButton /> -->
 	</div>
 
 	<div class="right-side">
 		<div class="links">
 			<button class="link-icon">
-				<!-- <i class="icon twitter-icon" /> -->
-				<img height="20px" width="20px" src="icons/twitter.png" alt="" />
+				<img height="20px" width="20px" src="/icons/twitter.svg" alt="" />
 				<a href="https://twitter.com/ElmiNote" rel="external" class="link">
 					{$_('landing-footer.news')}
 				</a>
 			</button>
 
 			<button class="link-icon">
-				<!-- <i class="icon terms-icon" /> -->
-				<img height="20px" width="20px" src="icons/terms.png" alt="" />
+				<img height="20px" width="20px" src="/icons/terms.svg" alt="" />
 				<a href="/terms" class="link">{$_('landing-footer.terms')}</a>
 			</button>
 
 			<button class="link-icon">
-				<!-- <i class="icon contact-icon" /> -->
-				<img height="20px" width="20px" src="icons/contact.png" alt="" />
+				<img height="20px" width="20px" src="/icons/contact.svg" alt="" />
 				<a href="mailto:team@elminote.io" class="link">{$_('landing-footer.contact')}</a>
 			</button>
 		</div>
 
-		<div class="made">Made with Elminote © 2023</div>
+		<div class="made">Made by 🦄ElmiNote Team © 2023</div>
 	</div>
 </div>
 
 <style lang="scss">
 	@import '../../../styles/colors.scss';
-	@import '../../../styles/icons.scss';
 
 	.body {
 		display: grid;

@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { _, locale } from '../../../services/i18n';
-	import GooglePlayButton from '../../shared/buttons/market-buttons/google-play-button.svelte';
-	import AppStoreButton from '../../shared/buttons/market-buttons/app-store-button.svelte';
 	import { getRoleI18n } from './landing-start.i18n';
 
 	const loc = $locale || 'en';
@@ -20,19 +18,22 @@
 			</h3>
 			<p class="description">{$_('landing-start.description')}</p>
 			<div class="app-buttons">
-				<GooglePlayButton />
-				<AppStoreButton />
+				<img src="/landing/badge_google.svg" alt="google play link" />
+				<img src="/landing/badge_apple.svg" alt="apple store link" />
+
+				<!-- <GooglePlayButton /> -->
+				<!-- <AppStoreButton /> -->
 			</div>
 		</div>
 
 		<div class="image-container">
 			<div class="phones-image">
 				{#if innerWidth > 1000}
-					<img src="landing/phones.png" alt="phones" />
+					<img src="/landing/phones.png" alt="phones" />
 				{/if}
 
 				{#if innerWidth <= 1000}
-					<img src="landing/phones2.png" alt="phones" />
+					<img src="/landing/phones2.png" alt="phones" />
 				{/if}
 			</div>
 		</div>
@@ -47,6 +48,7 @@
 		color: white;
 
 		background-image: url('/landing/background/bg1.png');
+		background-position: bottom;
 		background-size: cover;
 
 		@media (max-width: 1000px) {
@@ -132,12 +134,10 @@
 		}
 
 		img {
-			transform: rotate(-9.22deg);
 			max-width: 120%;
 
 			@media (max-width: 1000px) {
 				max-width: 100%;
-				transform: rotate(0deg);
 			}
 		}
 	}

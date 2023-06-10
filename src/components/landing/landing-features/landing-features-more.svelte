@@ -76,7 +76,7 @@
 		<div class="arrow-container" slot="prev">
 			<img
 				on:click={showPrevPage}
-				src="landing/arrows/arrow-left.png"
+				src="landing/arrows/arrow-left.svg"
 				alt="arrow left"
 				loading="lazy"
 			/>
@@ -84,7 +84,7 @@
 		<div class="arrow-container" slot="next">
 			<img
 				on:click={showNextPage}
-				src="landing/arrows/arrow-right.png"
+				src="landing/arrows/arrow-right.svg"
 				alt="arrow right"
 				loading="lazy"
 			/>

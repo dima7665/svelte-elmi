@@ -4,7 +4,7 @@
 	import Dropdown from '../../shared/buttons/dropdown/dropdown.svelte';
 
 	const overviewClick = () => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		document.getElementById('priority-features')?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	};
 
 	const feedbackClick = () => {
@@ -23,41 +23,41 @@
 	<div class="button-group">
 		{#if innerWidth > 765}
 			<button class="link-btn" on:click={overviewClick}>
-				<img height="24px" width="24px" src="icons/heart.png" alt="" />{$_(
+				<img height="24px" width="24px" src="/icons/heart.svg" alt="" />{$_(
 					'landing-header.overview'
 				)}
 			</button>
 			<Dropdown>
 				<button slot="trigger" class="dropdown-btn">
-					<img height="24px" width="24px" src="icons/download.png" alt="" />
+					<img height="24px" width="24px" src="/icons/download.svg" alt="" />
 					{$_('landing-header.download')}
 				</button>
 
 				<div class="drop-menu" slot="menu">
 					<div class="menu-item">
 						<span class="color-primary">AppStore</span>
-						<img height="31px" width="31px" src="icons/apple-drop.png" alt="" />
+						<img height="31px" width="31px" src="/icons/apple-drop.svg" alt="" />
 					</div>
 					<div class="menu-item">
 						<span>GooglePlay</span>
-						<img height="31px" width="31px" src="icons/google-drop.png" alt="" />
+						<img height="31px" width="31px" src="/icons/google-drop.svg" alt="" />
 					</div>
 				</div>
 			</Dropdown>
 
 			<!-- TODO: fix contact icon -->
 			<button class="link-btn" on:click={feedbackClick}>
-				<img height="24px" width="24px" src="icons/mail.png" alt="" />
+				<img height="24px" width="24px" src="/icons/mail.svg" alt="" />
 				{$_('landing-header.feedback')}
 			</button>
 		{/if}
 
 		{#if innerWidth < 765}
 			<button class="btn-icon">
-				<img height="41px" width="41px" src="icons/google-mobile.png" alt="" />
+				<img height="41px" width="41px" src="/icons/google-mobile.svg" alt="" />
 			</button>
 			<button class="btn-icon">
-				<img height="41px" width="41px" src="icons/apple-mobile.png" alt="" />
+				<img height="41px" width="41px" src="/icons/apple-mobile.svg" alt="" />
 			</button>
 		{/if}
 	</div>

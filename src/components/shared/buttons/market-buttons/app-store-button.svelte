@@ -5,7 +5,7 @@
 </script>
 
 <div class="container" style:--button-color={color}>
-	<div class="image-container"><img src="landing/app-store-64_{color}.png" alt="app store link" /></div>
+	<div class="image-container"><img src="/landing/app-store-64_{color}.png" alt="app store link" /></div>
 
 	<div class="text-container">
 		<p class="subtitle">{$_('market-buttons.apple.subtitle')}</p>

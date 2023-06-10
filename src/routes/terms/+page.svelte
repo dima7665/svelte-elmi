@@ -1,8 +1,6 @@
 <script>
 	import { _, setupI18n, waitLocale } from '$src/services/i18n';
 	import Logo from '$src/components/shared/components/logo.svelte';
-	import GooglePlayButton from '$src/components/shared/buttons/market-buttons/google-play-button.svelte';
-	import AppStoreButton from '$src/components/shared/buttons/market-buttons/app-store-button.svelte';
 
 	setupI18n({ withLocale: 'en' });
 </script>
@@ -13,7 +11,7 @@
 			<a href="/"><Logo color="black" /></a>
 
 			<a href="/" class="arrow-container">
-				<img src="icons/close.png" alt="close" />
+				<img src="/icons/close.svg" alt="close" />
 			</a>
 		</div>
 
@@ -96,22 +94,31 @@
             <h1 class="title">Contact Us</h1>
             <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
             <ul>
-                <li>By email: team@elminote.io</li>
+                <li>By email: <a href="mailto:team@elminote.io" class="link">team@elminote.io</a></li>
             </ul>
         </div>
 
         <div class="app-buttons">
-            <GooglePlayButton color='black' />
-            <AppStoreButton color='black' />
+            <img src="/landing/badge_google_black.svg" alt="google play link" />
+            <img src="/landing/badge_apple_black.svg" alt="apple store link" />
+
+            <!-- <GooglePlayButton color='black' /> -->
+            <!-- <AppStoreButton color='black' /> -->
         </div>
 	{/await}
 </div>
 
 <style lang="scss">
+    @import '../../styles/fonts.scss';
+
     .component {
         margin: 56px 100px;
 
         font-family: 'Inter';
+
+        @media (max-width: 800px) {
+			margin: 56px 15px;
+		}
     }
 
     h1 {

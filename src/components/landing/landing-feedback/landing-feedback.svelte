@@ -134,8 +134,7 @@
 		height: 48px;
 		padding: 0 20px;
 		font-size: 16px;
-		// border: 1px solid $color-sky-lightest;
-		border: 1px solid green;
+		border: 1px solid $color-sky-lightest;
 		border-radius: 48px;
 	}
 

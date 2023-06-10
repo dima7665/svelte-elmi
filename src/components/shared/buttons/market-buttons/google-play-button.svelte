@@ -5,8 +5,9 @@
 </script>
 
 <div class="container" style:--button-color={color}>
-	<div class="image-container"><img src="landing/google-play-64.png" alt="google play link" /></div>
-
+	<div class="image-container">
+		<img src="/landing/google-play-64.png" alt="google play link" />
+	</div>
 	<div class="text-container">
 		<p class="subtitle">{$_('market-buttons.google.subtitle')}</p>
 		<p class="title">{$_('market-buttons.google.title')}</p>
@@ -25,5 +26,9 @@
 	.title {
 		font-size: 22px;
 		margin: 0;
+	}
+
+	.image-container {
+		max-width: 100%;
 	}
 </style>

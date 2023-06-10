@@ -18,7 +18,7 @@
 <div class="feature-component">
 	<h3 class="section-title">{$_('key-features.title')}</h3>
 
-	<div class="container">
+	<div class="container" id="priority-features">
 		<Carousel dots={true} {particlesToShow} swiping={false} let:showPrevPage let:showNextPage>
 			{#each features as feature}
 				<div class="feature-card">
@@ -39,7 +39,7 @@
 			<div class="arrow-container" slot="prev">
 				<img
 					on:click={showPrevPage}
-					src="landing/arrows/arrow-left.png"
+					src="landing/arrows/arrow-left.svg"
 					alt="arrow left"
 					loading="lazy"
 				/>
@@ -47,7 +47,7 @@
 			<div class="arrow-container" slot="next">
 				<img
 					on:click={showNextPage}
-					src="landing/arrows/arrow-right.png"
+					src="landing/arrows/arrow-right.svg"
 					alt="arrow right"
 					loading="lazy"
 				/>
