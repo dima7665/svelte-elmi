@@ -6,6 +6,7 @@
 	let innerWidth: number = 1;
 	let width: number = 1;
 	let particlesToShow = 1;
+	let titleWidth = 0;
 
 	$: if (width) {
 		particlesToShow = Math.floor(width / 250);
@@ -15,7 +16,12 @@
 <svelte:window bind:innerWidth />
 
 <div class="component">
-	<h1 class="main-title">{$_('landing-theme.title')}</h1>
+	<h1 bind:clientWidth={titleWidth} class="main-title">{$_('landing-theme.title')}</h1>
+	{#if innerWidth > 1000}
+		<TooltipStatic maxWidth={300} tooltipTop={45} tooltipLeft={titleWidth - 90}>
+			User accessibility test ready: AA + AAA
+		</TooltipStatic>
+	{/if}
 
 	<div class="body">
 		<div class="description-container">
@@ -45,7 +51,7 @@
 						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
 						<img class="theme-image" src="/landing/themes/mono.png" alt="mono" />
 
-						<TooltipStatic tooltipTop={0} tooltipLeft={50}>
+						<TooltipStatic tooltipTop={0} tooltipLeft={70}>
 							{$_('coming_soon')}
 						</TooltipStatic>
 					</div>
@@ -80,7 +86,8 @@
 
 <style lang="scss">
 	.component {
-		padding: 0 100px;
+		position: relative;
+		padding: 50px 100px 0;
 
 		max-width: 1320px;
 		margin-left: auto;
@@ -96,6 +103,7 @@
 	.main-title {
 		font-size: 50px;
 		min-width: 765px;
+		max-width: fit-content;
 
 		@media (max-width: 765px) {
 			min-width: 300px;
@@ -142,11 +150,10 @@
 
 	.inner-container {
 		position: relative;
-		width: 180px;
 	}
 
 	.theme-title {
-		margin: 40px 0 20px;
+		margin: 40px 0 0 30px;
 		font-size: 18px;
 	}
 

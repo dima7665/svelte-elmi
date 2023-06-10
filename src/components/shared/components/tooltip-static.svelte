@@ -1,10 +1,16 @@
 <script lang="ts">
 	export let tooltipTop = 0;
 	export let tooltipLeft = 0;
+	export let maxWidth = 225;
 	export let direction: 'top' | 'bottom' = 'bottom';
 </script>
 
-<div style:top="{tooltipTop}px" style:left="{tooltipLeft}px" class="tooltip {direction}">
+<div
+	style:max-width="{maxWidth}px"
+	style:top="{tooltipTop}px"
+	style:left="{tooltipLeft}px"
+	class="tooltip {direction}"
+>
 	<slot />
 </div>
 
@@ -13,7 +19,6 @@
 
 	.tooltip {
 		position: absolute;
-		max-width: 225px;
 		min-width: 100px;
 		padding: 4px 8px;
 		font-size: 14px;
