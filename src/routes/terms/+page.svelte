@@ -110,6 +110,12 @@
 
 <style lang="scss">
     @import '../../styles/fonts.scss';
+    @import '../../styles/colors.scss';
+
+    :global(::selection) {
+		color: black;
+		background-color: $color-elmi-base;
+	}
 
     .component {
         margin: 56px 100px;

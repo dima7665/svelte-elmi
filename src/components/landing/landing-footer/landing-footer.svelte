@@ -13,22 +13,25 @@
 
 	<div class="right-side">
 		<div class="links">
-			<button class="link-icon">
+			<a href="https://twitter.com/ElmiNote" target="_blank" rel="external" class="link">
 				<img height="20px" width="20px" src="/icons/twitter.svg" alt="" />
-				<a href="https://twitter.com/ElmiNote" rel="external" class="link">
-					{$_('landing-footer.news')}
-				</a>
-			</button>
+				{$_('landing-footer.news')}
+			</a>
 
-			<button class="link-icon">
+			<a href="/terms" class="link">
+				<img height="20px" width="20px" src="/icons/feather.svg" alt="" />
+				{$_('landing-footer.terms')}
+			</a>
+
+			<a href="/policy" class="link">
 				<img height="20px" width="20px" src="/icons/terms.svg" alt="" />
-				<a href="/terms" class="link">{$_('landing-footer.terms')}</a>
-			</button>
+				{$_('landing-footer.policy')}
+			</a>
 
-			<button class="link-icon">
+			<a href="mailto:team@elminote.io" class="link">
 				<img height="20px" width="20px" src="/icons/contact.svg" alt="" />
-				<a href="mailto:team@elminote.io" class="link">{$_('landing-footer.contact')}</a>
-			</button>
+				{$_('landing-footer.contact')}
+			</a>
 		</div>
 
 		<div class="made">Made by 🦄ElmiNote Team © 2023</div>
@@ -62,16 +65,7 @@
 		}
 	}
 
-	.link {
-		font-size: 16px;
-		font-weight: 500;
-		color: $color-elmi-base;
-
-		text-decoration: unset;
-	}
-
 	.app-buttons {
-		// width: 400px;
 		display: grid;
 		grid-auto-flow: column;
 		gap: 20px;
@@ -104,24 +98,26 @@
 		display: flex;
 		gap: 30px;
 
-		@media (max-width: 1200px) {
+		@media (max-width: 1350px) {
 			display: grid;
 			justify-content: center;
 		}
 	}
 
-	.link-icon {
+	.link {
 		display: flex;
-		background-color: transparent;
-		border: none;
 		gap: 5px;
+		align-items: center;
+
+		font-size: 16px;
+		font-weight: 500;
+		color: $color-elmi-base;
+		text-decoration: unset;
 
 		@media (max-width: 900px) {
 			width: 340px;
 			height: 48px;
-			padding: 12px 16px;
 			justify-content: center;
-			align-items: center;
 			border: 1px solid $color-elmi-base;
 			border-radius: 48px;
 			gap: 20px;

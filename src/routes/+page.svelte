@@ -28,12 +28,18 @@
 
 <style lang="scss">
 	@import '../styles/fonts.scss';
+	@import '../styles/colors.scss';
 
 	.container {
 		margin: 0;
 
 		background-image: url('/landing/background/bg-black.png');
 		background-size: cover;
+	}
+
+	:global(::selection) {
+		color: black;
+		background-color: $color-elmi-base;
 	}
 
 	:global(body) {

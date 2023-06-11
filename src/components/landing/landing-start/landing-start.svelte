@@ -97,7 +97,7 @@
 			padding-top: 40px;
 			padding-bottom: 40px;
 
-			line-height: 24px;
+			line-height: 26px;
 			font-size: 18px;
 
 			@media (max-width: 765px) {
