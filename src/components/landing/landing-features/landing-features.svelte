@@ -3,6 +3,11 @@
 	import FeatureCard from '../../shared/cards/feature-card.svelte';
 	import LandingFeaturesMore from './landing-features-more.svelte';
 	import Carousel from 'svelte-carousel';
+	import create from '$lib/images/features/feature-create.png';
+	import organize from '$lib/images/features/feature-organize.png';
+	import sync from '$lib/images/features/feature-sync.png';
+
+	const assets: StringObject = { create, organize, sync };
 
 	let features = ['create', 'organize', 'sync'];
 	let innerWidth: number = 1;
@@ -23,12 +28,7 @@
 			{#each features as feature}
 				<div class="feature-card">
 					<FeatureCard>
-						<img
-							slot="image"
-							src={`landing/key-features/feature-${feature}.png`}
-							alt={`${feature}`}
-							loading="lazy"
-						/>
+						<img slot="image" src={assets[feature]} alt={`${feature}`} loading="lazy" />
 						<p slot="title" class="title">{$_(`key-features.${feature}.title`)}</p>
 						<p slot="description" class="description">
 							{$_(`key-features.${feature}.description`)}

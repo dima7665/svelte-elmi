@@ -6,7 +6,9 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface Platform {}
-	}
+	};
+	
+	type StringObject = {[p: string]: string};
 }
 
 export {};

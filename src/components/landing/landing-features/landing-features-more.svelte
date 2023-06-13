@@ -2,6 +2,10 @@
 	import { _ } from '../../../services/i18n';
 	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
 	import Carousel from 'svelte-carousel';
+	import categoriesPng from '$lib/images/features/more/categories.png';
+	import editorPng from '$lib/images/features/more/editor.png';
+	import propertiesPng from '$lib/images/features/more/properties.png';
+	import tagsPng from '$lib/images/features/more/tags.png';
 
 	let innerWidth: number = 1;
 	let particlesToShow = 1;
@@ -19,11 +23,7 @@
 	<Carousel swiping={false} dots={true} {particlesToShow} let:showPrevPage let:showNextPage>
 		<div class="outer-container">
 			<div style:z-index="101" class="inner-container">
-				<img
-					src="landing/key-features/more/editor.png"
-					alt={$_('more-features.editor.alt')}
-					loading="lazy"
-				/>
+				<img src={editorPng} alt={$_('more-features.editor.alt')} loading="lazy" />
 
 				<TooltipStatic tooltipTop={300} tooltipLeft={40}
 					>{$_('more-features.editor.description')}</TooltipStatic
@@ -33,11 +33,7 @@
 
 		<div class="outer-container">
 			<div class="inner-container">
-				<img
-					src="landing/key-features/more/properties.png"
-					alt={$_('more-features.properties.alt')}
-					loading="lazy"
-				/>
+				<img src={propertiesPng} alt={$_('more-features.properties.alt')} loading="lazy" />
 
 				<TooltipStatic tooltipTop={420} tooltipLeft={0} direction="top"
 					>{$_('more-features.properties.description')}</TooltipStatic
@@ -47,11 +43,7 @@
 
 		<div class="outer-container">
 			<div style:z-index="101" class="inner-container">
-				<img
-					src="landing/key-features/more/categories.png"
-					alt={$_('more-features.categories.alt')}
-					loading="lazy"
-				/>
+				<img src={categoriesPng} alt={$_('more-features.categories.alt')} loading="lazy" />
 
 				<TooltipStatic tooltipTop={190} tooltipLeft={40}
 					>{$_('more-features.categories.description')}</TooltipStatic
@@ -61,11 +53,7 @@
 
 		<div class="outer-container">
 			<div class="inner-container">
-				<img
-					src="landing/key-features/more/tags.png"
-					alt={$_('more-features.tags.alt')}
-					loading="lazy"
-				/>
+				<img src={tagsPng} alt={$_('more-features.tags.alt')} loading="lazy" />
 
 				<TooltipStatic tooltipTop={330} tooltipLeft={40}
 					>{$_('more-features.tags.description')}</TooltipStatic

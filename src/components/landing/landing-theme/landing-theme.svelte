@@ -2,6 +2,10 @@
 	import { _ } from '../../../services/i18n';
 	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
 	import Carousel from 'svelte-carousel';
+	import mainPng from '$lib/images/themes/main.png';
+	import darkPng from '$lib/images/themes/dark.png';
+	import lightPng from '$lib/images/themes/light.png';
+	import monoPng from '$lib/images/themes/mono.png';
 
 	let innerWidth: number = 1;
 	let width: number = 1;
@@ -35,21 +39,21 @@
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.light')}</h5>
-						<img class="theme-image" src="/landing/themes/light.png" alt="light" />
+						<img class="theme-image" src={lightPng} alt="light" />
 					</div>
 				</div>
 
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.dark')}</h5>
-						<img class="theme-image" src="/landing/themes/dark.png" alt="dark" />
+						<img class="theme-image" src={darkPng} alt="dark" />
 					</div>
 				</div>
 
 				<div class="outer-container">
 					<div class="inner-container">
 						<h5 class="theme-title">{$_('landing-theme.themes.mono')}</h5>
-						<img class="theme-image" src="/landing/themes/mono.png" alt="mono" />
+						<img class="theme-image" src={monoPng} alt="mono" />
 
 						<TooltipStatic tooltipTop={0} tooltipLeft={70}>
 							{$_('coming_soon')}
@@ -78,7 +82,7 @@
 
 		{#if innerWidth > 1000}
 			<div class="image-container">
-				<img class="combo-theme-image" src="/landing/themes/main.png" alt="combined themes" />
+				<img class="combo-theme-image" src={mainPng} alt="combined themes" />
 			</div>
 		{/if}
 	</div>
