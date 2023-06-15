@@ -3,14 +3,45 @@
 	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
 	import Carousel from 'svelte-carousel';
 	import mainPng from '$lib/images/themes/main.png';
+	import mainDarkPng from '$lib/images/themes/main-dark.png';
+	import mainDefaultPng from '$lib/images/themes/main-default.png';
 	import darkPng from '$lib/images/themes/dark.png';
 	import lightPng from '$lib/images/themes/light.png';
 	import monoPng from '$lib/images/themes/mono.png';
 
-	let innerWidth: number = 1;
-	let width: number = 1;
+	let innerWidth = 1;
+	let width = 1;
 	let particlesToShow = 1;
 	let titleWidth = 0;
+
+	let comboImageWidth = 0;
+	let sliderPos = 150;
+
+	let dragging = false;
+	let maxWidth = 0;
+	let boxPadding = 0;
+
+	const onMouseDown = (event: any) => {
+		if (event.target.id === 'slider') {
+			dragging = true;
+			boxPadding = event.clientX - event.target.offsetLeft - 3;
+		}
+
+		maxWidth = event.target.parentElement.scrollWidth;
+	};
+
+	const onMouseMove = (event: any) => {
+		if (!dragging) {
+			return;
+		}
+
+		const curPos = event.clientX - boxPadding;
+		sliderPos = curPos < 0 ? 0 : curPos > maxWidth ? maxWidth : curPos;
+	};
+
+	const onMouseUp = () => {
+		dragging = false;
+	};
 
 	$: if (width) {
 		particlesToShow = Math.floor(width / 250);
@@ -19,7 +50,7 @@
 
 <svelte:window bind:innerWidth />
 
-<div class="component">
+<div class="component" on:mouseup={onMouseUp}>
 	<h1 bind:clientWidth={titleWidth} class="main-title">{$_('landing-theme.title')}</h1>
 	{#if innerWidth > 1000}
 		<TooltipStatic maxWidth={300} tooltipTop={45} tooltipLeft={titleWidth - 90}>
@@ -81,8 +112,26 @@
 		</div>
 
 		{#if innerWidth > 1000}
-			<div class="image-container">
+			<!-- <div class="image-container">
 				<img class="combo-theme-image" src={mainPng} alt="combined themes" />
+			</div> -->
+
+			<div
+				bind:clientWidth={comboImageWidth}
+				style:--slider-width={comboImageWidth + 'px'}
+				style:--slider-pos={sliderPos + 'px'}
+				class="image-container"
+				on:mousedown={onMouseDown}
+				on:mousemove={onMouseMove}
+			>
+				<div class="first-image-box">
+					<img class="first-image" src={mainDarkPng} alt="combined themes" />
+				</div>
+				<div class="second-image-box">
+					<img class="second-image" src={mainDefaultPng} alt="combined themes" />
+
+					<div id="slider" class="slider" />
+				</div>
 			</div>
 		{/if}
 	</div>
@@ -131,13 +180,46 @@
 	}
 
 	.image-container {
+		position: relative;
 		min-width: 240px;
 		max-width: 350px;
 		margin-left: auto;
+		
+		user-select: none;
 
 		@media (min-width: 1200px) {
 			max-width: 420px;
 		}
+	}
+
+	.first-image-box {
+		width: 100%;
+	}
+
+	.second-image-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--slider-pos);
+		overflow: hidden;
+	}
+
+	.first-image {
+		width: 100%;
+	}
+
+	.second-image {
+		width: var(--slider-width);
+	}
+
+	.slider {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 5px;
+		background-color: transparent;
+		cursor: ew-resize;
 	}
 
 	.combo-theme-image,
