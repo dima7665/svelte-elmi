@@ -5,7 +5,9 @@
 		"title": "Unique Quick Notes mobile application for",
 		"role": {
 			"everyone": "everyone",
-			"developer": "Developers"
+			"human": "human",
+			"writer": "writer",
+			"developer": "developer"
 		},
 		"description": "ElmiNote app is a powerful and versatile tool for organizing your thoughts and ideas on-the-go. With a clean and intuitive interface, creating, editing, and managing your notes has never been easier. Whether you're taking notes during a meeting, jotting down a to-do list, or brainstorming for your next project, the Notes app provides a seamless and efficient experience.",
 		"image-alt": "app screenshot"

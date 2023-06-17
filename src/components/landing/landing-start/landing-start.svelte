@@ -1,11 +1,37 @@
 <script lang="ts">
 	import { _, locale } from '../../../services/i18n';
 	import { getRoleI18n } from './landing-start.i18n';
+	import { onMount } from 'svelte';
+	import { typewriter } from '../../shared/animations/typewriter';
 
 	const loc = $locale || 'en';
-	const role = getRoleI18n(loc).everyone;
+	const roles = [
+		getRoleI18n(loc).developer,
+		getRoleI18n(loc).writer,
+		getRoleI18n(loc).human,
+		getRoleI18n(loc).everyone
+	];
+
+	let currentRoleIndex = 0;
+	let displayRole = getRoleI18n(loc).everyone;
+	let showRole = true;
 
 	let innerWidth: number;
+
+	onMount(() => {
+		const roleChangeInterval = setInterval(() => {
+			showRole = false;
+
+			setTimeout(() => {
+				showRole = true;
+			}, 200);
+
+			currentRoleIndex = currentRoleIndex === roles.length - 1 ? 0 : currentRoleIndex + 1;
+			displayRole = roles[currentRoleIndex];
+		}, 7000);
+
+		return () => clearInterval(roleChangeInterval);
+	});
 </script>
 
 <svelte:window bind:innerWidth />
@@ -14,7 +40,10 @@
 	<div class="start-body">
 		<div class="text-container">
 			<h3 class="title">
-				{$_('landing-start.title')} <span class="role">{role}</span>
+				{$_('landing-start.title')}
+				{#if showRole}
+					<span in:typewriter={{ speed: 10 }} class="role typing">{displayRole}</span>
+				{/if}
 			</h3>
 			<p class="description">{$_('landing-start.description')}</p>
 			<div class="app-buttons">
@@ -86,8 +115,24 @@
 				line-height: 48px;
 			}
 
+			@keyframes blink {
+				0%,
+				100% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.1;
+				}
+			}
+
 			.role {
 				color: $color-primary;
+
+				&.typing::after {
+					content: '';
+					border-right: 5px solid $color-primary;
+					animation: blink 1.2s linear infinite;
+				}
 			}
 		}
 
