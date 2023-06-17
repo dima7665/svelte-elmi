@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
+
+  build:
+    commands:
+      - echo "Building frontend..."
+      - npm run build
+
+  post_build:
+    commands:
+      - echo "Uploading build artifacts to S3..."
+      - aws s3 sync ./build s3://elmi-codebuild-test --delete
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: ./build
