@@ -36,7 +36,7 @@
 					</FeatureCard>
 				</div>
 			{/each}
-			<div class="arrow-container" slot="prev">
+			<div class="arrow-container arrow-left" slot="prev">
 				<img
 					on:click={showPrevPage}
 					src="landing/arrows/arrow-left.svg"
@@ -44,7 +44,7 @@
 					loading="lazy"
 				/>
 			</div>
-			<div class="arrow-container" slot="next">
+			<div class="arrow-container arrow-right" slot="next">
 				<img
 					on:click={showNextPage}
 					src="landing/arrows/arrow-right.svg"
@@ -95,6 +95,18 @@
 
 		img {
 			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&.arrow-left {
+			margin-right: 5px;
+		}
+
+		&.arrow-right {
+			margin-left: 5px;
 		}
 	}
 

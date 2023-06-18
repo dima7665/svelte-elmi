@@ -150,7 +150,7 @@
 		cursor: pointer;
 
 		&:hover {
-			background-color: green;
+			background-color: #ac2a5d;
 		}
 	}
 

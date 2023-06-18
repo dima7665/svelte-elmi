@@ -34,7 +34,7 @@
 			</a>
 		</div>
 
-		<div class="made">Made by 🦄ElmiNote Team © 2023</div>
+		<div class="made">Made by 🦄 ElmiNote Team © 2023</div>
 	</div>
 </div>
 
@@ -114,6 +114,10 @@
 		color: $color-elmi-base;
 		text-decoration: unset;
 
+		&:hover {
+			text-decoration: underline;
+		}
+
 		@media (max-width: 900px) {
 			width: 340px;
 			height: 48px;
@@ -121,6 +125,11 @@
 			border: 1px solid $color-elmi-base;
 			border-radius: 48px;
 			gap: 20px;
+
+			&:hover {
+				text-decoration: none;
+				transform: scale(1.05);
+			}
 		}
 	}
 </style>

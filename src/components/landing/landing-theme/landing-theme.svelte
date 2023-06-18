@@ -249,6 +249,18 @@
 
 		img {
 			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&.arrow-left {
+			margin-right: 5px;
+		}
+
+		&.arrow-right {
+			margin-left: 5px;
 		}
 	}
 </style>

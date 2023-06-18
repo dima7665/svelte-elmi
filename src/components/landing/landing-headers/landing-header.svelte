@@ -4,7 +4,9 @@
 	import Dropdown from '../../shared/buttons/dropdown/dropdown.svelte';
 
 	const overviewClick = () => {
-		document.getElementById('priority-features')?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+		document
+			.getElementById('priority-features')
+			?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	};
 
 	const feedbackClick = () => {
@@ -22,10 +24,9 @@
 
 	<div class="button-group">
 		{#if innerWidth > 765}
-			<button class="link-btn" on:click={overviewClick}>
-				<img height="24px" width="24px" src="/icons/heart.svg" alt="" />{$_(
-					'landing-header.overview'
-				)}
+			<button class="link-btn after" on:click={overviewClick}>
+				<img height="24px" width="24px" src="/icons/heart.svg" alt="" />
+				<span>{$_('landing-header.overview')}</span>
 			</button>
 			<Dropdown>
 				<button slot="trigger" class="dropdown-btn">
@@ -105,6 +106,11 @@
 		background-color: transparent;
 
 		cursor: pointer;
+
+		&:hover {
+			color: $color-elmi-base;
+			transition: color 0.25s ease-in;
+		}
 	}
 
 	.dropdown-btn {
@@ -149,6 +155,10 @@
 
 		font-family: 'Inter';
 		cursor: pointer;
+
+		&:hover {
+			font-weight: 500;
+		}
 	}
 
 	.color-primary {
