@@ -367,7 +367,9 @@
 
 		<div class="app-buttons">
 			<img src="/landing/badge_google_black.svg" alt="google play link" />
-			<img src="/landing/badge_apple_black.svg" alt="apple store link" />
+			<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
+				<img src="/landing/badge_apple_black.svg" alt="apple store link" />
+			</a>
 
 			<!-- <GooglePlayButton color='black' /> -->
 			<!-- <AppStoreButton color='black' /> -->
@@ -423,5 +425,11 @@
 		grid-auto-flow: column;
 		gap: 20px;
 		justify-content: space-between;
+
+		@media (max-width: 450px) {
+			width: auto;
+			grid-auto-flow: row;
+			justify-content: center;
+		}
 	}
 </style>

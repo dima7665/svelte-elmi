@@ -5,7 +5,9 @@
 <div class="body">
 	<div class="app-buttons">
 		<img src="/landing/badge_google.svg" alt="google play link" />
-		<img src="/landing/badge_apple.svg" alt="apple store link" />
+		<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
+			<img src="/landing/badge_apple.svg" alt="apple store link" />
+		</a>
 
 		<!-- <GooglePlayButton /> -->
 		<!-- <AppStoreButton /> -->

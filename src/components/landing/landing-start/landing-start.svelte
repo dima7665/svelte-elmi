@@ -28,7 +28,7 @@
 
 			currentRoleIndex = currentRoleIndex === roles.length - 1 ? 0 : currentRoleIndex + 1;
 			displayRole = roles[currentRoleIndex];
-		}, 7000);
+		}, 6000);
 
 		return () => clearInterval(roleChangeInterval);
 	});
@@ -48,7 +48,9 @@
 			<p class="description">{$_('landing-start.description')}</p>
 			<div class="app-buttons">
 				<img src="/landing/badge_google.svg" alt="google play link" />
-				<img src="/landing/badge_apple.svg" alt="apple store link" />
+				<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
+					<img src="/landing/badge_apple.svg" alt="apple store link" />
+				</a>
 
 				<!-- <GooglePlayButton /> -->
 				<!-- <AppStoreButton /> -->
