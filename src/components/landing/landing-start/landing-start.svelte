@@ -26,7 +26,7 @@
 				showRole = true;
 			}, 200);
 
-			currentRoleIndex = currentRoleIndex === roles.length - 1 ? 0 : currentRoleIndex + 1;
+			currentRoleIndex = (currentRoleIndex + 1) % roles.length;
 			displayRole = roles[currentRoleIndex];
 		}, 6000);
 
@@ -40,14 +40,25 @@
 	<div class="start-body">
 		<div class="text-container">
 			<h3 class="title">
-				{$_('landing-start.title')}
-				{#if showRole}
-					<span in:typewriter={{ speed: 10 }} class="role typing">{displayRole}</span>
-				{/if}
+				<span>{$_('landing-start.title')}</span>
+
+				<span>
+					<div class="role">
+						{#if showRole}
+							<span in:typewriter={{ speed: 10 }} class="typing">{displayRole}</span>
+						{/if}
+					</div>
+				</span>
 			</h3>
 			<p class="description">{$_('landing-start.description')}</p>
 			<div class="app-buttons">
-				<img src="/landing/badge_google.svg" alt="google play link" />
+				<a
+					href="https://play.google.com/store/apps/details?id=com.elminote.android"
+					target="_blank"
+				>
+					<img src="/landing/badge_google.svg" alt="google play link" />
+				</a>
+
 				<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
 					<img src="/landing/badge_apple.svg" alt="apple store link" />
 				</a>
@@ -129,8 +140,12 @@
 
 			.role {
 				color: $color-primary;
+				min-width: 200px;
+				min-height: 96px;
+				width: 200px;
+				// display: contents;
 
-				&.typing::after {
+				.typing::after {
 					content: '';
 					border-right: 5px solid $color-primary;
 					animation: blink 1.2s linear infinite;

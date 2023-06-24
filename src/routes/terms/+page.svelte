@@ -10,7 +10,7 @@
 		<div class="header">
 			<a href="/"><Logo color="black" /></a>
 
-			<a href="/" class="arrow-container">
+			<a href="/" class="close-button">
 				<img src="/icons/close.svg" alt="close" />
 			</a>
 		</div>
@@ -258,7 +258,10 @@
 		</div>
 
 		<div class="app-buttons">
-			<img src="/landing/badge_google_black.svg" alt="google play link" />
+			<a href="https://play.google.com/store/apps/details?id=com.elminote.android" target="_blank">
+				<img src="/landing/badge_google_black.svg" alt="google play link" />
+			</a>
+
 			<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
 				<img src="/landing/badge_apple_black.svg" alt="apple store link" />
 			</a>
@@ -311,6 +314,12 @@
 		align-items: center;
 	}
 
+	.close-button {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
 	.text {
 		white-space: pre-line;
 	}
@@ -322,7 +331,7 @@
 		gap: 20px;
 		justify-content: space-between;
 
-        @media (max-width: 450px) {
+		@media (max-width: 450px) {
 			width: auto;
 			grid-auto-flow: row;
 			justify-content: center;

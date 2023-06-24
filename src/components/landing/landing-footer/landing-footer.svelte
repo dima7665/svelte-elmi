@@ -4,7 +4,10 @@
 
 <div class="body">
 	<div class="app-buttons">
-		<img src="/landing/badge_google.svg" alt="google play link" />
+		<a href="https://play.google.com/store/apps/details?id=com.elminote.android" target="_blank">
+			<img src="/landing/badge_google.svg" alt="google play link" />
+		</a>
+
 		<a href="https://apps.apple.com/us/app/elminote/id6446087493" target="_blank">
 			<img src="/landing/badge_apple.svg" alt="apple store link" />
 		</a>

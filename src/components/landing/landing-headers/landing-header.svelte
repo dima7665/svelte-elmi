@@ -25,7 +25,8 @@
 	<div class="button-group">
 		{#if innerWidth > 765}
 			<button class="link-btn after" on:click={overviewClick}>
-				<img height="24px" width="24px" src="/icons/heart.svg" alt="" />
+				<!-- <img height="24px" width="24px" src="/icons/heart.svg" alt="" /> -->
+				<span class="icon heart-icon" />
 				<span>{$_('landing-header.overview')}</span>
 			</button>
 			<Dropdown>
@@ -35,31 +36,54 @@
 				</button>
 
 				<div class="drop-menu" slot="menu">
-					<div class="menu-item">
-						<span class="color-primary">AppStore</span>
-						<img height="31px" width="31px" src="/icons/apple-drop.svg" alt="" />
-					</div>
-					<div class="menu-item">
-						<span>GooglePlay</span>
-						<img height="31px" width="31px" src="/icons/google-drop.svg" alt="" />
-					</div>
+					<a
+						class="drop-link"
+						href="https://apps.apple.com/us/app/elminote/id6446087493"
+						target="_blank"
+					>
+						<div class="menu-item">
+							<span>AppStore</span>
+							<span class="drop-icon apple-icon" />
+							<!-- <img height="31px" width="31px" src="/icons/apple-drop.svg" alt="" /> -->
+						</div>
+					</a>
+
+					<a
+						class="drop-link"
+						href="https://play.google.com/store/apps/details?id=com.elminote.android"
+						target="_blank"
+					>
+						<div class="menu-item">
+							<span>GooglePlay</span>
+							<span class="drop-icon google-icon" />
+							<!-- <img height="31px" width="31px" src="/icons/google-drop.svg" alt="" /> -->
+						</div>
+					</a>
 				</div>
 			</Dropdown>
 
-			<!-- TODO: fix contact icon -->
 			<button class="link-btn" on:click={feedbackClick}>
-				<img height="24px" width="24px" src="/icons/mail.svg" alt="" />
+				<!-- <img height="24px" width="24px" src="/icons/mail.svg" alt="" /> -->
+				<span class="icon mail-icon" />
 				{$_('landing-header.feedback')}
 			</button>
 		{/if}
 
 		{#if innerWidth < 765}
-			<button class="btn-icon">
-				<img height="41px" width="41px" src="/icons/google-mobile.svg" alt="" />
-			</button>
-			<button class="btn-icon">
-				<img height="41px" width="41px" src="/icons/apple-mobile.svg" alt="" />
-			</button>
+			<a
+				href="https://play.google.com/store/apps/details?id=com.elminote.android"
+				target="_blank"
+				class="btn-icon"
+			>
+				<img height="48px" width="48px" src="/icons/google-mobile.svg" alt="" />
+			</a>
+			<a
+				href="https://apps.apple.com/us/app/elminote/id6446087493"
+				target="_blank"
+				class="btn-icon"
+			>
+				<img height="48px" width="48px" src="/icons/apple-mobile.svg" alt="" />
+			</a>
 		{/if}
 	</div>
 </div>
@@ -107,10 +131,42 @@
 
 		cursor: pointer;
 
+		--heart-icon: url('/icons/heart.svg');
+		--mail-icon: url('/icons/mail.svg');
+
 		&:hover {
 			color: $color-elmi-base;
-			transition: color 0.25s ease-in;
+			// transition: color 0.25s ease-in;
+
+			--heart-icon: url('/icons/heart_hover.svg');
+			--mail-icon: url('/icons/mail_hover.svg');
 		}
+	}
+
+	.icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.heart-icon {
+		background-image: var(--heart-icon);
+	}
+
+	.mail-icon {
+		background-image: var(--mail-icon);
+	}
+
+	.drop-icon {
+		width: 31px;
+		height: 31px;
+	}
+
+	.apple-icon {
+		background-image: var(--apple-drop);
+	}
+
+	.google-icon {
+		background-image: var(--google-drop);
 	}
 
 	.dropdown-btn {
@@ -146,6 +202,11 @@
 		display: grid;
 	}
 
+	.drop-link {
+		text-decoration: none;
+		color: black;
+	}
+
 	.menu-item {
 		display: flex;
 		padding: 10px;
@@ -156,12 +217,14 @@
 		font-family: 'Inter';
 		cursor: pointer;
 
-		&:hover {
-			font-weight: 500;
-		}
-	}
+		--apple-drop: url('/icons/apple-drop.svg');
+		--google-drop: url('/icons/google-drop.svg');
 
-	.color-primary {
-		color: $color-primary;
+		&:hover {
+			color: $color-primary;
+
+			--apple-drop: url('/icons/apple-drop_hover.svg');
+			--google-drop: url('/icons/google-drop_hover.svg');
+		}
 	}
 </style>
