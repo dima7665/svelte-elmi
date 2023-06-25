@@ -2,7 +2,6 @@
 	import { _ } from '../../../services/i18n';
 	import TooltipStatic from '../../shared/components/tooltip-static.svelte';
 	import Carousel from 'svelte-carousel';
-	import mainPng from '$lib/images/themes/main.png';
 	import mainDarkPng from '$lib/images/themes/main-dark.png';
 	import mainDefaultPng from '$lib/images/themes/main-default.png';
 	import darkPng from '$lib/images/themes/dark.png';
@@ -15,11 +14,15 @@
 	let titleWidth = 0;
 
 	let comboImageWidth = 0;
+	let comboImageHeight = 0;
+	let sliderVerticalPos = 0;
 	let sliderPos = 150;
 
 	let dragging = false;
 	let maxWidth = 0;
 	let boxPadding = 0;
+
+	$: sliderVerticalPos = comboImageHeight / 2 - 10;
 
 	const onMouseDown = (event: any) => {
 		if (event.target.id === 'slider') {
@@ -27,7 +30,7 @@
 			boxPadding = event.clientX - event.target.offsetLeft - 3;
 		}
 
-		maxWidth = event.target.parentElement.scrollWidth;
+		maxWidth = event.target.parentElement.scrollWidth + 10;
 	};
 
 	const onMouseMove = (event: any) => {
@@ -112,26 +115,27 @@
 		</div>
 
 		{#if innerWidth > 1000}
-			<!-- <div class="image-container">
-				<img class="combo-theme-image" src={mainPng} alt="combined themes" />
-			</div> -->
-
 			<div
 				bind:clientWidth={comboImageWidth}
 				style:--slider-width={comboImageWidth + 'px'}
+				style:--slider-v-pos={sliderVerticalPos + 'px'}
 				style:--slider-pos={sliderPos + 'px'}
 				class="image-container"
 				on:mousedown={onMouseDown}
 				on:mousemove={onMouseMove}
 			>
-				<div class="first-image-box">
+				<div class="first-image-box" bind:clientHeight={comboImageHeight}>
 					<img class="first-image" src={mainDarkPng} alt="combined themes" />
 				</div>
 				<div class="second-image-box">
 					<img class="second-image" src={mainDefaultPng} alt="combined themes" />
-
-					<div id="slider" class="slider" />
 				</div>
+
+				<div class="slider-button-container">
+					<div id="slider" style:left="{sliderPos - 10}px" class="slider-button" />
+				</div>
+
+				{sliderVerticalPos}
 			</div>
 		{/if}
 	</div>
@@ -184,7 +188,7 @@
 		min-width: 240px;
 		max-width: 350px;
 		margin-left: auto;
-		
+
 		user-select: none;
 
 		@media (min-width: 1200px) {
@@ -212,14 +216,20 @@
 		width: var(--slider-width);
 	}
 
-	.slider {
+	.slider-button-container {
 		position: absolute;
-		top: 0;
-		right: 0;
-		height: 100%;
-		width: 5px;
-		background-color: transparent;
-		cursor: ew-resize;
+		width: calc(100% + 10px);
+		height: 20px;
+		top: var(--slider-v-pos);
+
+		.slider-button {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			background-color: green;
+			border-radius: 10px;
+		}
 	}
 
 	.combo-theme-image,
