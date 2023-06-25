@@ -22,15 +22,18 @@
 	let maxWidth = 0;
 	let boxPadding = 0;
 
-	$: sliderVerticalPos = comboImageHeight / 2 - 10;
+	$: sliderVerticalPos = comboImageHeight / 2 - 13;
 
 	const onMouseDown = (event: any) => {
-		if (event.target.id === 'slider') {
+		if (event.target.id === 'slider' || event.target.id === 'slider-icon') {
 			dragging = true;
-			boxPadding = event.clientX - event.target.offsetLeft - 3;
-		}
 
-		maxWidth = event.target.parentElement.scrollWidth + 10;
+			const sliderTarget = event.target.id === 'slider' ? event.target : event.target.parentElement;
+
+			boxPadding = event.clientX - sliderTarget.offsetLeft - 3;
+
+			maxWidth = sliderTarget.parentElement.offsetWidth;
+		}
 	};
 
 	const onMouseMove = (event: any) => {
@@ -38,7 +41,7 @@
 			return;
 		}
 
-		const curPos = event.clientX - boxPadding;
+		const curPos = event.clientX - boxPadding + 10;
 		sliderPos = curPos < 0 ? 0 : curPos > maxWidth ? maxWidth : curPos;
 	};
 
@@ -132,16 +135,18 @@
 				</div>
 
 				<div class="slider-button-container">
-					<div id="slider" style:left="{sliderPos - 10}px" class="slider-button" />
+					<div id="slider" style:left="{sliderPos - 13}px" class="slider-button">
+						<div id="slider-icon" class="resize-icon" />
+					</div>
 				</div>
-
-				{sliderVerticalPos}
 			</div>
 		{/if}
 	</div>
 </div>
 
 <style lang="scss">
+	@import '../../../styles/colors.scss';
+
 	.component {
 		position: relative;
 		padding: 50px 100px 0;
@@ -155,6 +160,8 @@
 		@media (max-width: 1000px) {
 			padding: 0 15px;
 		}
+
+		--resize-icon: url('/icons/resize_h.svg');
 	}
 
 	.main-title {
@@ -218,18 +225,28 @@
 
 	.slider-button-container {
 		position: absolute;
-		width: calc(100% + 10px);
-		height: 20px;
+		width: 100%;
+		height: 26px;
 		top: var(--slider-v-pos);
 
 		.slider-button {
 			position: absolute;
-			width: 20px;
-			height: 20px;
+			width: 26px;
+			height: 26px;
 			cursor: pointer;
-			background-color: green;
-			border-radius: 10px;
+			background-color: $color-primary;
+			border-radius: 13px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
+	}
+
+	.resize-icon {
+		width: 20px;
+		height: 10px;
+		background-image: var(--resize-icon);
 	}
 
 	.combo-theme-image,

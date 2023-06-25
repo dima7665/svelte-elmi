@@ -16,6 +16,14 @@
 	let displayRole = getRoleI18n(loc).everyone;
 	let showRole = true;
 
+	let titleWidth = 0;
+	let titleLines = 0;
+	let titleHeight = 0;
+
+	$: titleLines =
+		innerWidth > 800 ? (titleWidth > 774 ? 3 : 4) : titleWidth > 529 ? 2 : titleWidth > 388 ? 3 : 4;
+	$: titleHeight = titleLines * (innerWidth > 800 ? 96 : 48);
+
 	let innerWidth: number;
 
 	onMount(() => {
@@ -39,15 +47,13 @@
 <div class="start-component">
 	<div class="start-body">
 		<div class="text-container">
-			<h3 class="title">
+			<h3 class="title" bind:clientWidth={titleWidth} style:min-height="{titleHeight}px">
 				<span>{$_('landing-start.title')}</span>
 
-				<span>
-					<div class="role">
-						{#if showRole}
-							<span in:typewriter={{ speed: 10 }} class="typing">{displayRole}</span>
-						{/if}
-					</div>
+				<span class="role">
+					{#if showRole}
+						<span in:typewriter={{ speed: 10 }} class="typing">{displayRole}</span>
+					{/if}
 				</span>
 			</h3>
 			<p class="description">{$_('landing-start.description')}</p>
