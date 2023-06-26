@@ -24,17 +24,17 @@
 
 		"create": {
 			"title": "Create and edit notes",
-			"description": "The app allows you to create and edit notes with ease. You can format text, add images, and attach files to your notes, making it easy to capture and organize your ideas in a structured way..."
+			"description": "The app allows you to create and edit notes with ease. You can format text, add images, and attach files to your notes, making it easy to capture and organize your ideas in a structured way."
 		},
 
 		"organize": {
 			"title": "Organize notes",
-			"description": "The app provides various options to organize your notes, including folders, tags, and search. You can create custom folders to group related notes, add tags to categorize your notes, and..."
+			"description": "The app provides various options to organize your notes, including folders, tags, and search. You can create custom categories to group related notes, add tags to categorize your notes."
 		},
 
 		"sync": {
 			"title": "Sync across devices",
-			"description": "The app automatically syncs your notes across devices, so you can access your notes from your phone, tablet, or computer. This ensures that your notes are always up-to-date and easily..."
+			"description": "The app automatically syncs your notes across devices, so you can access your notes from your phone, tablet, or computer. (Coming soon)"
 		}
 	},
 
@@ -73,7 +73,7 @@
 			"dark": "Dark theme",
 			"mono": "Mono theme"
 		},
-		"coming": "... Coming soon"
+		"coming": "Coming soon"
 	},
 
 	"landing-feedback": {

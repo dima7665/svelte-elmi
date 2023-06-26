@@ -10,7 +10,7 @@
 		<div class="header">
 			<a href="/"><Logo color="black" /></a>
 
-			<a href="/" class="close-buttonr">
+			<a href="/" class="close-button">
 				<img src="/icons/close.svg" alt="close" />
 			</a>
 		</div>
