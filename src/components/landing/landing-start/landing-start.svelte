@@ -6,14 +6,14 @@
 
 	const loc = $locale || 'en';
 	const roles = [
+		getRoleI18n(loc).creator,
 		getRoleI18n(loc).developer,
 		getRoleI18n(loc).writer,
-		getRoleI18n(loc).human,
 		getRoleI18n(loc).everyone
 	];
 
 	let currentRoleIndex = 0;
-	let displayRole = getRoleI18n(loc).everyone;
+	let displayRole = getRoleI18n(loc).creator;
 	let showRole = true;
 
 	let titleWidth = 0;

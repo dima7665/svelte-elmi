@@ -22,7 +22,7 @@
 	let maxWidth = 0;
 	let boxPadding = 0;
 
-	$: sliderVerticalPos = comboImageHeight / 2 - 13;
+	$: sliderVerticalPos = comboImageHeight / 2 - 25;
 
 	const onMouseDown = (event: any) => {
 		if (event.target.id === 'slider' || event.target.id === 'slider-icon') {
@@ -135,7 +135,7 @@
 				</div>
 
 				<div class="slider-button-container">
-					<div id="slider" style:left="{sliderPos - 13}px" class="slider-button">
+					<div id="slider" style:left="{sliderPos - 25}px" class="slider-button">
 						<div id="slider-icon" class="resize-icon" />
 					</div>
 				</div>
@@ -226,16 +226,16 @@
 	.slider-button-container {
 		position: absolute;
 		width: 100%;
-		height: 26px;
+		height: 50px;
 		top: var(--slider-v-pos);
 
 		.slider-button {
 			position: absolute;
-			width: 26px;
-			height: 26px;
+			width: 50px;
+			height: 50px;
 			cursor: pointer;
 			background-color: $color-primary;
-			border-radius: 13px;
+			border-radius: 25px;
 
 			display: flex;
 			align-items: center;
@@ -244,8 +244,8 @@
 	}
 
 	.resize-icon {
-		width: 20px;
-		height: 10px;
+		width: 40px;
+		height: 20px;
 		background-image: var(--resize-icon);
 	}
 

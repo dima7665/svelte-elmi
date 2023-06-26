@@ -5,7 +5,7 @@
 		"title": "Unique Quick Notes mobile application for",
 		"role": {
 			"everyone": "everyone",
-			"human": "human",
+			"creator": "creator",
 			"writer": "writer",
 			"developer": "developer"
 		},
