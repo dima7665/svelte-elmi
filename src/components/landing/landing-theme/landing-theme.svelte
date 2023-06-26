@@ -244,9 +244,10 @@
 	}
 
 	.resize-icon {
-		width: 40px;
-		height: 20px;
+		width: 30px;
+		height: 15px;
 		background-image: var(--resize-icon);
+		background-size: contain;
 	}
 
 	.combo-theme-image,
