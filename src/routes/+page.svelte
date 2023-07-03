@@ -33,8 +33,17 @@
 	.container {
 		margin: 0;
 
-		background-image: url('/landing/background/bg-black.png');
-		background-size: cover;
+		background-image: url('/landing/background/bg_line_1l.svg'),
+			url('/landing/background/bg_line_1r.svg'), url('/landing/background/bg_line_2.svg'),
+			url('/landing/background/bg_line_1l.svg'), url('/landing/background/bg_line_2.svg'),
+			url('/landing/background/bg-black.png');
+		background-size: 80%, 50%, 140%, 70%, 130%, cover;
+		background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, round;
+		background-position: 0 17%, 100% 5%, -200px 90%, -100px 70%, -300px calc(100% + 400px), 0 0;
+
+		@media (max-width: 600px) {
+			background-size: 120%, 90%, cover;
+		}
 	}
 
 	:global(::selection) {
@@ -72,6 +81,9 @@
 		// width: 100%;
 		padding: 0 100px;
 		background-color: white;
+		background-image: url('/landing/background/bg_line_2.svg');
+		background-repeat: no-repeat;
+		background-size: 90%;
 
 		@media (max-width: 1000px) {
 			padding: 0 15px;
