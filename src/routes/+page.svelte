@@ -42,7 +42,8 @@
 		background-position: 0 17%, 100% 5%, -200px 90%, -100px 70%, -300px calc(100% + 400px), 0 0;
 
 		@media (max-width: 600px) {
-			background-size: 120%, 90%, cover;
+			background-size: 120%, 90%, 170%, 150%, 0, cover;
+			background-position: 0 17%, 100% 5%, -200px 60%, -100px 90%, -300px calc(100% + 400px), 0 0;
 		}
 	}
 
@@ -87,6 +88,7 @@
 
 		@media (max-width: 1000px) {
 			padding: 0 15px;
+			background-size: 0;
 		}
 	}
 
