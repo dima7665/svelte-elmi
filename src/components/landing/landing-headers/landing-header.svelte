@@ -3,6 +3,13 @@
 	import Logo from '../../shared/components/logo.svelte';
 	import Dropdown from '../../shared/buttons/dropdown/dropdown.svelte';
 
+	const preloadImageUrls = [
+		'/icons/google-drop_hover.svg',
+		'/icons/apple-drop_hover.svg',
+		'/icons/heart_hover.svg',
+		'/icons/mail_hover.svg'
+	];
+
 	const overviewClick = () => {
 		document
 			.getElementById('priority-features')
@@ -16,6 +23,12 @@
 	let innerWidth: number;
 	let scrollY: number;
 </script>
+
+<svelte:head>
+	{#each preloadImageUrls as image}
+		<link rel="preload" as="image" href={image} />
+	{/each}
+</svelte:head>
 
 <svelte:window bind:innerWidth bind:scrollY />
 
@@ -136,7 +149,6 @@
 
 		&:hover {
 			color: $color-elmi-base;
-			// transition: color 0.25s ease-in;
 
 			--heart-icon: url('/icons/heart_hover.svg');
 			--mail-icon: url('/icons/mail_hover.svg');
